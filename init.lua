@@ -14,3 +14,7 @@ require("davidz.plugins.lsp.null-ls")
 require("davidz.plugins.autopairs")
 require("davidz.plugins.treesitter")
 require("davidz.plugins.gitsigns")
+require("davidz.plugins.jupyter-vim")
+
+-- python provider
+vim.g.python3_host_prog = "/Users/davidzeng/miniforge3/bin/python3"

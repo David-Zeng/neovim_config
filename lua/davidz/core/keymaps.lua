@@ -27,7 +27,6 @@ keymap.set("n", "<leader>tx", ":tabclose<CR>") -- close current tab
 keymap.set("n", "<leader>tn", ":tabn<CR>") --  go to next tab
 keymap.set("n", "<leader>tp", ":tabp<CR>") --  go to previous tab
 
-
 ----------------------
 -- Plugin Keybinds
 ----------------------
@@ -51,7 +50,15 @@ keymap.set("n", "<leader>gfc", "<cmd>Telescope git_bcommits<cr>") -- list git co
 keymap.set("n", "<leader>gb", "<cmd>Telescope git_branches<cr>") -- list git branches (use <cr> to checkout) ["gb" for git branch]
 keymap.set("n", "<leader>gs", "<cmd>Telescope git_status<cr>") -- list current changes per file with diff preview ["gs" for git status]
 
--- restart lsp server (not on youtube nvim video)
+-- restart lsp server
 keymap.set("n", "<leader>rs", ":LspRestart<CR>") -- mapping to restart lsp if necessary
 
-
+-- jupyter-vim
+keymap.set("n", "<Leader>R", "<Cmd>JupyterRunFile<CR>", { buffer = true, silent = true })
+keymap.set("n", "<Leader>I", "<Cmd>PythonImportThisFile<CR>", { buffer = true, silent = true })
+keymap.set("n", "<Leader>d", "<Cmd>JupyterCd %:p:h<CR>", { buffer = true, silent = true })
+keymap.set("n", "<Leader>X", "<Cmd>JupyterSendCell<CR>", { buffer = true, silent = true })
+keymap.set("n", "<Leader>P", "<Cmd>JupyterSendRange<CR>", { buffer = true, silent = true })
+keymap.set("n", "<Leader>p", "<Plug>JupyterRunTextObj", { buffer = true, silent = true })
+keymap.set("v", "<Leader>p", "<Plug>JupyterRunVisual", { buffer = true, silent = true })
+keymap.set("n", "<Leader>b", "<Cmd>PythonSetBreak<CR>", { buffer = true, silent = true })
