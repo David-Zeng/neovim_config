@@ -62,3 +62,6 @@ keymap.set("n", "<Leader>P", "<Cmd>JupyterSendRange<CR>", { buffer = true, silen
 keymap.set("n", "<Leader>p", "<Plug>JupyterRunTextObj", { buffer = true, silent = true })
 keymap.set("v", "<Leader>p", "<Plug>JupyterRunVisual", { buffer = true, silent = true })
 keymap.set("n", "<Leader>b", "<Cmd>PythonSetBreak<CR>", { buffer = true, silent = true })
+
+-- tagbar
+keymap.set("n", "<F8>", ":TagbarToggle<CR>") -- toggle split window maximization

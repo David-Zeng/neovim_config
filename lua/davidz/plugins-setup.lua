@@ -111,6 +111,12 @@ return packer.startup(function(use)
 	-- python
 	use({ "jupyter-vim/jupyter-vim" }) -- jupyter-vim
 
+	-- cody
+	use({ "sourcegraph/sg.nvim", run = "nvim -l build/init.lua" })
+
+	-- tagbar
+	use({ "preservim/tagbar" })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
