@@ -19,3 +19,6 @@ require("davidz.plugins.cody")
 
 -- python provider
 vim.g.python3_host_prog = "/Users/davidzeng/miniforge3/bin/python3"
+
+-- cody highlight group
+vim.api.nvim_set_hl(0, "CmpItemKindCody", { fg = "Red" })
