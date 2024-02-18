@@ -49,6 +49,7 @@ mason_null_ls.setup({
 		-- "eslint_d", -- ts/js linter
 		"sqlfluffy", -- sql linter
 		"sqlfmt", -- sql formatter
+		"black", -- python formatter
 	},
 	-- auto-install configured formatters & linters (with null-ls)
 	automatic_installation = true,
