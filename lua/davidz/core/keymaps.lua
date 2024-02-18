@@ -82,8 +82,3 @@ vim.api.nvim_set_keymap("n", "<localleader>e", "<Plug>JupyterRunTextObj", { nore
 vim.api.nvim_set_keymap("v", "<localleader>e", "<Plug>JupyterRunVisual", { noremap = true, silent = true })
 -- Debugging maps
 vim.api.nvim_set_keymap("n", "<localleader>b", ":PythonSetBreak<CR>", { noremap = true, silent = true })
-
--- null-ls
-vim.keymap.set("n", "<leader>f", function()
-	vim.lsp.buf.format({ async = true })
-end)
