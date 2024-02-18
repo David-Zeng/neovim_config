@@ -65,3 +65,25 @@ keymap.set("n", "<Leader>b", "<Cmd>PythonSetBreak<CR>", { buffer = true, silent 
 
 -- tagbar
 keymap.set("n", "<F8>", ":TagbarToggle<CR>") -- toggle split window maximization
+
+-- jupyter-vim
+vim.g.maplocalleader = ","
+-- Run current file
+vim.api.nvim_set_keymap("n", "<localleader>R", ":JupyterRunFile<CR>", { noremap = true, silent = true })
+-- Import current file
+vim.api.nvim_set_keymap("n", "<localleader>I", ":PythonImportThisFile<CR>", { noremap = true, silent = true })
+-- Change to directory of current file
+vim.api.nvim_set_keymap("n", "<localleader>d", ":JupyterCd %:p:h<CR>", { noremap = true, silent = true })
+-- Send a selection of lines
+vim.api.nvim_set_keymap("n", "<localleader>X", ":JupyterSendCell<CR>", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("n", "<localleader>E", ":JupyterSendRange<CR>", { noremap = true, silent = true })
+-- Run a text object or visual selection
+vim.api.nvim_set_keymap("n", "<localleader>e", "<Plug>JupyterRunTextObj", { noremap = true, silent = true })
+vim.api.nvim_set_keymap("v", "<localleader>e", "<Plug>JupyterRunVisual", { noremap = true, silent = true })
+-- Debugging maps
+vim.api.nvim_set_keymap("n", "<localleader>b", ":PythonSetBreak<CR>", { noremap = true, silent = true })
+
+-- null-ls
+vim.keymap.set("n", "<leader>f", function()
+	vim.lsp.buf.format({ async = true })
+end)

@@ -117,6 +117,9 @@ return packer.startup(function(use)
 	-- tagbar
 	use({ "preservim/tagbar" })
 
+	-- auto session
+	use({ "rmagatti/auto-session" })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
