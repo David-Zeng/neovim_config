@@ -89,3 +89,25 @@ keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- 
 keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
 keymap.set("n", "[d", ":Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
 keymap.set("n", "]d", ":Lspsaga diagnostic_jump_next<CR>", opts) -- jump to previous diagnostic in buffer
+
+-- hop
+local hop = require("hop")
+local directions = require("hop.hint").HintDirection
+keymap.set("", "f", function()
+	hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true })
+end, { remap = true })
+keymap.set("", "f2", function()
+	hop.hint_char2({ direction = directions.AFTER_CURSOR, current_line_only = false })
+end, { remap = true })
+keymap.set("", "F", function()
+	hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true })
+end, { remap = true })
+keymap.set("", "F2", function()
+	hop.hint_char2({ direction = directions.BEFORE_CURSOR, current_line_only = false })
+end, { remap = true })
+keymap.set("", "t", function()
+	hop.hint_char1({ direction = directions.AFTER_CURSOR, current_line_only = true, hint_offset = -1 })
+end, { remap = true })
+keymap.set("", "T", function()
+	hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
+end, { remap = true })

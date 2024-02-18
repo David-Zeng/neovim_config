@@ -5,4 +5,5 @@ if not setup then
 end
 
 -- configure/enable gitsigns
-leap.setup().create_default_mappings()
+-- leap.setup().create_default_mappings()
+leap.setup()

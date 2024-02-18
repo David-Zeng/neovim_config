@@ -122,8 +122,15 @@ return packer.startup(function(use)
 	-- auto session
 	use({ "rmagatti/auto-session" })
 
-	-- leap
-	use({ "ggandor/leap.nvim" })
+	-- hop
+	use({
+		"smoka7/hop.nvim",
+		tag = "*", -- optional but strongly recommended
+		config = function()
+			-- you can configure Hop the way you like here; see :h hop-config
+			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+		end,
+	})
 
 	if packer_bootstrap then
 		require("packer").sync()
