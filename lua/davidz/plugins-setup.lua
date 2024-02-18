@@ -122,6 +122,9 @@ return packer.startup(function(use)
 	-- auto session
 	use({ "rmagatti/auto-session" })
 
+	-- leap
+	use({ "ggandor/leap.nvim" })
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end

@@ -23,7 +23,7 @@ mason_lspconfig.setup({
 	-- list of servers for mason to install
 	ensure_installed = {
 		"pyright",
-		"r_language_server",
+		-- "r_language_server",
 		"sqlls",
 		"marksman",
 		"vimls",
@@ -46,7 +46,7 @@ mason_null_ls.setup({
 	ensure_installed = {
 		"prettier", -- ts/js formatter
 		"stylua", -- lua formatter
-		"eslint_d", -- ts/js linter
+		-- "eslint_d", -- ts/js linter
 		"sqlfluffy", -- sql linter
 		"sql-formatter", -- sql formatter
 	},
