@@ -1,4 +1,5 @@
 vim.g.mapleader = " "
+vim.g.maplocalleader = ","
 
 local keymap = vim.keymap
 
@@ -67,18 +68,24 @@ keymap.set("n", "<Leader>b", "<Cmd>PythonSetBreak<CR>", { buffer = true, silent 
 keymap.set("n", "<F8>", ":TagbarToggle<CR>") -- toggle split window maximization
 
 -- jupyter-vim
-vim.g.maplocalleader = ","
--- Run current file
-vim.api.nvim_set_keymap("n", "<localleader>R", ":JupyterRunFile<CR>", { noremap = true, silent = true })
--- Import current file
-vim.api.nvim_set_keymap("n", "<localleader>I", ":PythonImportThisFile<CR>", { noremap = true, silent = true })
--- Change to directory of current file
-vim.api.nvim_set_keymap("n", "<localleader>d", ":JupyterCd %:p:h<CR>", { noremap = true, silent = true })
--- Send a selection of lines
-vim.api.nvim_set_keymap("n", "<localleader>X", ":JupyterSendCell<CR>", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("n", "<localleader>E", ":JupyterSendRange<CR>", { noremap = true, silent = true })
--- Run a text object or visual selection
-vim.api.nvim_set_keymap("n", "<localleader>e", "<Plug>JupyterRunTextObj", { noremap = true, silent = true })
-vim.api.nvim_set_keymap("v", "<localleader>e", "<Plug>JupyterRunVisual", { noremap = true, silent = true })
--- Debugging maps
-vim.api.nvim_set_keymap("n", "<localleader>b", ":PythonSetBreak<CR>", { noremap = true, silent = true })
+keymap.set("n", "<localleader>R", ":JupyterRunFile<CR>", { noremap = true, silent = true })
+keymap.set("n", "<localleader>I", ":PythonImportThisFile<CR>", { noremap = true, silent = true })
+keymap.set("n", "<localleader>d", ":JupyterCd %:p:h<CR>", { noremap = true, silent = true })
+keymap.set("n", "<localleader>X", ":JupyterSendCell<CR>", { noremap = true, silent = true })
+keymap.set("n", "<localleader>E", ":JupyterSendRange<CR>", { noremap = true, silent = true })
+keymap.set("n", "<localleader>e", "<Plug>JupyterRunTextObj", { noremap = true, silent = true })
+keymap.set("v", "<localleader>e", "<Plug>JupyterRunVisual", { noremap = true, silent = true })
+keymap.set("n", "<localleader>b", ":PythonSetBreak<CR>", { noremap = true, silent = true })
+
+-- lspsaga
+local opts = { noremap = true, silent = true }
+keymap.set("n", "gf", "<cmd>Lspsaga lsp_finder<CR>", opts) -- show definition, references
+keymap.set("n", "gD", "<Cmd>lua vim.lsp.buf.declaration()<CR>", opts) -- got to declaration
+keymap.set("n", "gd", "<cmd>Lspsaga peek_definition<CR>", opts) -- see definition and make edits in window
+keymap.set("n", "gi", "<cmd>lua vim.lsp.buf.implementation()<CR>", opts) -- go to implementation
+keymap.set("n", "<leader>ca", "<cmd>Lspsaga code_action<CR>", opts) -- see available code actions
+keymap.set("n", "<leader>rn", "<cmd>Lspsaga rename<CR>", opts) -- smart rename
+keymap.set("n", "<leader>D", "<cmd>Lspsaga show_line_diagnostics<CR>", opts) -- show  diagnostics for line
+keymap.set("n", "<leader>d", "<cmd>Lspsaga show_cursor_diagnostics<CR>", opts) -- show diagnostics for cursor
+keymap.set("n", "[d", ":Lspsaga diagnostic_jump_prev<CR>", opts) -- jump to previous diagnostic in buffer
+keymap.set("n", "]d", ":Lspsaga diagnostic_jump_next<CR>", opts) -- jump to previous diagnostic in buffer
