@@ -111,3 +111,6 @@ end, { remap = true })
 keymap.set("", "T", function()
 	hop.hint_char1({ direction = directions.BEFORE_CURSOR, current_line_only = true, hint_offset = 1 })
 end, { remap = true })
+
+-- gen with ollama
+keymap.set({ "n", "v" }, "<leader>]", ":Gen<CR>")
