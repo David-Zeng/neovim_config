@@ -120,7 +120,10 @@ return packer.startup(function(use)
 	use({ "preservim/tagbar" })
 
 	-- auto session
-	use({ "rmagatti/auto-session" })
+	-- use({ "rmagatti/auto-session" })
+
+	-- possession
+	use({ "jedrzejboczar/possession.nvim" })
 
 	-- hop
 	use({
