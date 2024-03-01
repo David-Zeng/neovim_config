@@ -119,9 +119,6 @@ return packer.startup(function(use)
 	-- tagbar
 	use({ "preservim/tagbar" })
 
-	-- auto session
-	-- use({ "rmagatti/auto-session" })
-
 	-- possession
 	use({ "jedrzejboczar/possession.nvim" })
 
