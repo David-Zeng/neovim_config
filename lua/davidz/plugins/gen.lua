@@ -6,7 +6,7 @@ end
 
 -- configure/enable gitsigns
 gen.setup({
-	model = "mistral", -- The default model to use.
+	model = "mistral:instruct", -- The default model to use.
 	host = "localhost", -- The host running the Ollama service.
 	port = "11434", -- The port on which the Ollama service is listening.
 	display_mode = "float", -- The display mode. Can be "float" or "split".
@@ -32,13 +32,52 @@ gen.setup({
 	debug = false, -- Prints errors and the command which is run.
 })
 
-gen.prompts["Elaborate_Text"] = {
-	prompt = "Elaborate the following text:\n$text",
-	replace = true,
+-- customized prompts
+gen.prompts["Enhance_Wording_in_office"] = {
+	prompt = "Modify the following text to use better wording in office enviornment, just output the final text without additional quotes around it:\n$text",
+	replace = false,
 }
 
-gen.prompts["Fix_Code"] = {
-	prompt = "Fix the following code. Only ouput the result in format ```$filetype\n...\n```:\n```$filetype\n$text\n```",
-	replace = true,
-	extract = "```$filetype\n(.-)```",
-}
+-- return {
+--     Generate = { prompt = "$input", replace = true },
+--     Chat = { prompt = "$input" },
+--     Summarize = { prompt = "Summarize the following text:\n$text" },
+--     Ask = { prompt = "Regarding the following text, $input:\n$text" },
+--     Change = {
+--         prompt = "Change the following text, $input, just output the final text without additional quotes around it:\n$text",
+--         replace = true,
+--     },
+--     Enhance_Grammar_Spelling = {
+--         prompt = "Modify the following text to improve grammar and spelling, just output the final text without additional quotes around it:\n$text",
+--         replace = true,
+--     },
+--     Enhance_Wording = {
+--         prompt = "Modify the following text to use better wording, just output the final text without additional quotes around it:\n$text",
+--         replace = true,
+--     },
+--     Make_Concise = {
+--         prompt = "Modify the following text to make it as simple and concise as possible, just output the final text without additional quotes around it:\n$text",
+--         replace = true,
+--     },
+--     Make_List = {
+--         prompt = "Render the following text as a markdown list:\n$text",
+--         replace = true,
+--     },
+--     Make_Table = {
+--         prompt = "Render the following text as a markdown table:\n$text",
+--         replace = true,
+--     },
+--     Review_Code = {
+--         prompt = "Review the following code and make concise suggestions:\n```$filetype\n$text\n```",
+--     },
+--     Enhance_Code = {
+--         prompt = "Enhance the following code, only output the result in format ```$filetype\n...\n```:\n```$filetype\n$text\n```",
+--         replace = true,
+--         extract = "```$filetype\n(.-)```",
+--     },
+--     Change_Code = {
+--         prompt = "Regarding the following code, $input, only output the result in format ```$filetype\n...\n```:\n```$filetype\n$text\n```",
+--         replace = true,
+--         extract = "```$filetype\n(.-)```",
+--     },
+-- }
