@@ -33,6 +33,9 @@ keymap.set("n", "<leader>k", "<C-W>k")
 keymap.set("n", "<leader>h", "<C-W>h")
 keymap.set("n", "<leader>l", "<C-W>l")
 
+-- toggle line wrap
+keymap.set("n", "<F9>", ":set wrap!<CR>", { noremap = true, silent = true })
+
 ----------------------
 -- Plugin Keybinds
 ----------------------
