@@ -6,7 +6,7 @@ end
 
 -- configure/enable gitsigns
 gen.setup({
-	model = "mistral:instruct", -- The default model to use.
+	model = "mistral:7b-instruct-v0.2-q4_K_M", -- The default model to use.
 	host = "localhost", -- The host running the Ollama service.
 	port = "11434", -- The port on which the Ollama service is listening.
 	display_mode = "float", -- The display mode. Can be "float" or "split".
