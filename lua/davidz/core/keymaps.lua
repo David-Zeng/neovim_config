@@ -123,3 +123,5 @@ end, { remap = true })
 
 -- gen with ollama
 keymap.set({ "n", "v" }, "<leader>]", ":Gen<CR>")
+
+keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
