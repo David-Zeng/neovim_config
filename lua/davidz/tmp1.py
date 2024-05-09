@@ -21,7 +21,7 @@ def create_and_operate_arrays():
     # Formatted output of the results using numpy's print_r() function for readability
     print("Summed Array:")
     np.set_printoptions(precision=2)  # Setting precision for displaying float numbers
-    print(np.array(summed_arrays))
+    print(np.array(nummed_arrays))
 
     print("\nProduct of Arrays:")
     np.set_printoptions(

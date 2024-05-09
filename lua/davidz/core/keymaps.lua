@@ -125,3 +125,5 @@ end, { remap = true })
 keymap.set({ "n", "v" }, "<leader>]", ":Gen<CR>")
 
 keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
+
+keymap.set("n", "<leader>f", ':lua vim.cmd("!ctags -R .")<CR>', { noremap = true })
