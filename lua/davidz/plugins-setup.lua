@@ -145,6 +145,28 @@ return packer.startup(function(use)
 		ft = { "markdown" },
 	})
 
+	-- dadbod
+	use({
+		"kristijanhusak/vim-dadbod-ui",
+		requires = {
+			"tpope/vim-dadbod", -- Required dependency
+			{
+				"kristijanhusak/vim-dadbod-completion",
+				ft = { "sql", "mysql", "plsql" }, -- Optional dependency for specific filetypes
+			},
+		},
+		cmd = {
+			"DBUI",
+			"DBUIToggle",
+			"DBUIAddConnection",
+			"DBUIFindBuffer",
+		},
+		config = function()
+			-- Your DBUI configuration
+			vim.g.db_ui_use_nerd_fonts = 1
+		end,
+	})
+
 	if packer_bootstrap then
 		require("packer").sync()
 	end
