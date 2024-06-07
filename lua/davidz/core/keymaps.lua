@@ -124,6 +124,13 @@ end, { remap = true })
 -- gen with ollama
 keymap.set({ "n", "v" }, "<leader>]", ":Gen<CR>")
 
+-- escape for jupyter console in nvim
 keymap.set("t", "<Esc>", "<C-\\><C-n>", { noremap = true })
 
+-- ctags
 keymap.set("n", "<leader>tt", ':lua vim.cmd("!ctags -R .")<CR>', { noremap = true })
+
+-- nvim tree toggle
+keymap.set("n", "<leader>ss", ":NvimTreeToggle<CR>", { noremap = true })
+
+keymap.set("n", "<leader>tw", ":set wrap!<CR>", { noremap = true })

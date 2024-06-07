@@ -19,7 +19,9 @@ null_ls.setup({
 		--  "formatting.prettier.with({disabled_filetypes = {}})" (see null-ls docs)
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
-		formatting.sql_formatter, -- sql formatter
+		formatting.sqlfluff.with({
+			extra_args = { "--config", vim.fn.getcwd() .. "/.sqlfluff" },
+		}), -- sql formatter
 		formatting.black, -- sql formatter
 
 		-- diagnostics.eslint_d.with({ -- js/ts linter

@@ -1,0 +1,1280 @@
+# sql snippets in snipmate format
+
+snippet bq_std sql-snippet
+	#standardSQL
+
+snippet cda_tb_txn_pth sql-snippet
+	SELECT
+		TxnStartDate,
+		TxnStartTime,
+		SiteNumber, 
+		SalesOrg,
+		ArticleNumber,
+		ProductNumber,
+		RetailUoM, 
+		PosNumber,
+		PosTxnNumber, 
+		LoyaltyCardNumber,
+		BasketKey,
+		BarcodeNumber,
+		ProductQuantity,
+		MeasuredQuantity,
+		RetailAmountIncldGst,
+		RetailAmountExcldGst,
+		WOWDollarIncldGst,
+		WOWDollarExcldGst 
+	FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA.POS_ITEM_LINE_DETAIL\`
+	+--------------+--------------+------------+----------+---------------+---------------+-----------+-----------+--------------+------------------------------------------------------------------------------------------+----------------------------+---------------+-----------------+------------------+----------------------+----------------------+-------------------+-------------------+
+	| TxnStartDate | TxnStartTime | SiteNumber | SalesOrg | ArticleNumber | ProductNumber | RetailUoM | PosNumber | PosTxnNumber |                                    LoyaltyCardNumber                                     |         BasketKey          | BarcodeNumber | ProductQuantity | MeasuredQuantity | RetailAmountIncldGst | RetailAmountExcldGst | WOWDollarIncldGst | WOWDollarExcldGst |
+	+--------------+--------------+------------+----------+---------------+---------------+-----------+-----------+--------------+------------------------------------------------------------------------------------------+----------------------------+---------------+-----------------+------------------+----------------------+----------------------+-------------------+-------------------+
+	|   2015-03-02 |     07:17:40 | 3368       | 1005     | 105606        | 105606-EA     | EA        | 100       | 1            | R8nRTwwiWCbhGCDii/dleL8pqwk1VI7pZaiiKnn+cC1hF5Hkig4IFwNiLnkKxH4w1wuCHUc2gTXi1wBXAQ5vAA== | 20150302071740100100003368 | 9300633207762 |               1 |                0 |                    0 |                    0 |                 0 |                 0 |
+	|   2015-03-01 |     07:23:20 | 3317       | 1005     | 224053        | 224053-EA     | EA        | 100       | 12           | DDBWMDIBVAs2sJ+hC4Zz1aiIA1xBXoYXlGCE2dYYKflx6xS36qEQWfpI9TpcGDXd1H8pjoUc/uyUG39ZOmlgYw== | 20150301072320100120003317 | 9300462019369 |               1 |                0 |                    0 |                    0 |                 0 |                 0 |
+	|   2015-03-01 |     07:23:20 | 3317       | 1005     | 336409        | 336409-EA     | EA        | 100       | 12           | DDBWMDIBVAs2sJ+hC4Zz1aiIA1xBXoYXlGCE2dYYKflx6xS36qEQWfpI9TpcGDXd1H8pjoUc/uyUG39ZOmlgYw== | 20150301072320100120003317 | 93532921      |              10 |                0 |                    0 |                    0 |                 0 |                 0 |
+	|   2015-03-01 |     07:23:20 | 3317       | 1005     | 134834        | 134834-EA     | EA        | 100       | 12           | DDBWMDIBVAs2sJ+hC4Zz1aiIA1xBXoYXlGCE2dYYKflx6xS36qEQWfpI9TpcGDXd1H8pjoUc/uyUG39ZOmlgYw== | 20150301072320100120003317 | 9300675053495 |               1 |                0 |                    0 |                    0 |                 0 |                 0 |
+	|   2015-03-01 |     07:23:20 | 3317       | 1005     | 48443         | 48443-EA      | EA        | 100       | 12           | DDBWMDIBVAs2sJ+hC4Zz1aiIA1xBXoYXlGCE2dYYKflx6xS36qEQWfpI9TpcGDXd1H8pjoUc/uyUG39ZOmlgYw== | 20150301072320100120003317 | 9310052533205 |               1 |                0 |                    0 |                    0 |                 0 |                 0 |
+	|   2015-03-01 |     07:23:20 | 3317       | 1005     | 115452        | 115452-KG     | KG        | 100       | 12           | DDBWMDIBVAs2sJ+hC4Zz1aiIA1xBXoYXlGCE2dYYKflx6xS36qEQWfpI9TpcGDXd1H8pjoUc/uyUG39ZOmlgYw== | 20150301072320100120003317 | 230483000000  |               0 |                0 |                    0 |                    0 |                 0 |                 0 |
+	|   2015-03-01 |     07:23:20 | 3317       | 1005     | 351693        | 351693-EA     | EA        | 100       | 12           | DDBWMDIBVAs2sJ+hC4Zz1aiIA1xBXoYXlGCE2dYYKflx6xS36qEQWfpI9TpcGDXd1H8pjoUc/uyUG39ZOmlgYw== | 20150301072320100120003317 | 9300633208714 |               1 |                0 |                    0 |                    0 |                 0 |                 0 |
+	|   2015-03-01 |     07:23:20 | 3317       | 1005     | 752048        | 752048-EA     | EA        | 100       | 12           | DDBWMDIBVAs2sJ+hC4Zz1aiIA1xBXoYXlGCE2dYYKflx6xS36qEQWfpI9TpcGDXd1H8pjoUc/uyUG39ZOmlgYw== | 20150301072320100120003317 | 9310653102961 |               1 |                0 |                    0 |                    0 |                 0 |                 0 |
+	|   2015-03-01 |     07:23:20 | 3317       | 1005     | 712001        | 712001-EA     | EA        | 100       | 12           | DDBWMDIBVAs2sJ+hC4Zz1aiIA1xBXoYXlGCE2dYYKflx6xS36qEQWfpI9TpcGDXd1H8pjoUc/uyUG39ZOmlgYw== | 20150301072320100120003317 | 9310653102541 |               1 |                0 |                    0 |                    0 |                 0 |                 0 |
+	|   2015-03-01 |     07:23:20 | 3317       | 1005     | 176852        | 176852-EA     | EA        | 100       | 12           | DDBWMDIBVAs2sJ+hC4Zz1aiIA1xBXoYXlGCE2dYYKflx6xS36qEQWfpI9TpcGDXd1H8pjoUc/uyUG39ZOmlgYw== | 20150301072320100120003317 | 9310088006834 |               1 |                0 |                    0 |                    0 |                 0 |                 0 |
+	+--------------+--------------+------------+----------+---------------+---------------+-----------+-----------+--------------+------------------------------------------------------------------------------------------+----------------------------+---------------+-----------------+------------------+----------------------+----------------------+-------------------+-------------------+
+
+
+snippet cda_tb_txn_pth sql-snippet
+	SELECT
+		TxnStartDate,
+		TxnStartTime,
+		SiteNumber,
+		SalesOrg,
+		PosNumber,
+		PosTxnNumber,
+		LoyaltyCardNumber,
+		BasketKey,
+		SalesAmountIncldGst,
+		SalesAmountExcldGst,
+		WOWDollarIncldGst,
+		WOWDollarExcldGst,
+	FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA.POS_TXN_HEADER\`
+
+	+--------------+--------------+------------+----------+-----------+--------------+------------------------------------------------------------------------------------------+-----------+---------------------+---------------------+-------------------+-------------------+
+	| TxnStartDate | TxnStartTime | SiteNumber | SalesOrg | PosNumber | PosTxnNumber |                                    LoyaltyCardNumber                                     | BasketKey | SalesAmountIncldGst | SalesAmountExcldGst | WOWDollarIncldGst | WOWDollarExcldGst |
+	+--------------+--------------+------------+----------+-----------+--------------+------------------------------------------------------------------------------------------+-----------+---------------------+---------------------+-------------------+-------------------+
+	|   2014-07-01 |     20:02:00 | 1030       | 1005     | 100       | 9404392      | U0T7hplkIpd1NyvaUVlxrdRyuGWk20XLY4TZtcxbRekbA1WlJbFsHrWIM3lBXAfy+0Vcdm561JF+Wj3w9nPxAw== | 9404392   |              188.96 |              178.17 |                 0 |                 0 |
+	|   2014-07-01 |     14:20:00 | 1030       | 1005     | 100       | 9401433      | 6oA3xM5WuIKoZjyLOD8XkP7g4v1n7EXmie5oYhld5bLAa8oIHMNTm7gAaKW70Ks3SmZI7LwO110WwOqAY7VsKA== | 9401433   |              205.18 |              195.66 |                 0 |                 0 |
+	|   2014-07-01 |     10:37:00 | 1030       | 1005     | 100       | 9399554      | LVLL1o2qiNjns+jvdKDgK6xpakvRhE9EguNy3kFNndyMCgc6ugk44MXXcGhsTWZOqijdW2U3rfUbQ50PvLM1cw== | 9399554   |              120.07 |              116.08 |                 0 |                 0 |
+	|   2014-07-01 |     05:17:00 | 1030       | 1005     | 100       | 9398481      | cpzvarNu9gCT8OWWy5whDN+w+PwCjcVD2K5I52jkwHZPpR4fuL5pClad5gBPRsPGaU2iYctp1qW7SHm0hxW1Dg== | 9398481   |               145.6 |              132.36 |                 0 |                 0 |
+	|   2014-07-01 |     17:19:00 | 1030       | 1005     | 100       | 9403081      | 3H+VN/bLgubNGv7un5yA2HCGHA8tNASkH44psT1z6tJwDDIIpdOQcWSUNGxX4KFQ6xrkxc1BHY2k0Lp9Jl6yyg== | 9403081   |              186.31 |              169.37 |                 0 |                 0 |
+	|   2014-07-01 |     22:35:00 | 1030       | 1005     | 100       | 9405979      | D1vbrPNswr+Evz9pLVnfebgJxd3BOx1pvGrrRLcCtoDye1QhrHoENdUD7fJ+c4aXWspMAtyguXe6qzv54+FwKQ== | 9405979   |              119.94 |              112.09 |                 0 |                 0 |
+	|   2014-07-01 |     06:38:00 | 1030       | 1005     | 100       | 9398519      | +UaAr0dtKm6UL2DG74o2hCbUgfzwr/bdktAgR9q8b3mAvAqc2FI7DKZGV3/OCSHwPqxUDbNc1/JJ1fTY27/V9A== | 9398519   |              157.56 |              151.78 |                 0 |                 0 |
+	|   2014-07-01 |     11:15:00 | 1030       | 1005     | 100       | 9399879      | UycOierX0r5c66REpdDxttMZNOmuZCue+Tr1CJfkpDPZTCihaIpzMP6pycn+ZkxxRisya2TjgYcQJ3NbAi4gsA== | 9399879   |              248.59 |              225.99 |                 0 |                 0 |
+	|   2014-07-01 |     20:56:00 | 1030       | 1005     | 100       | 9404981      | MEBC2aShvDTL8g+5K1+cPz3MdrISK9X+6J0ET6lGWdFf9hZmjMMBEHYOx9A4TIlmSNe8IRIyVGswOWAloT77vA== | 9404981   |              354.03 |              337.39 |                 0 |                 0 |
+	|   2014-07-01 |     14:21:00 | 1030       | 1005     | 100       | 9401446      | szHYBtGaJkNNNJqTEfjbz/bPv1ZDihzVNXULspfPCMAIf9k27jA9wcdHPrOyQOn8VpGGyO8I9TkthNyOOxyD5A== | 9401446   |              303.57 |              275.97 |                 0 |                 0 |
+	+--------------+--------------+------------+----------+-----------+--------------+------------------------------------------------------------------------------------------+-----------+---------------------+---------------------+-------------------+-------------------+
+
+
+snippet cda_tb_txn_prl sql-snippet
+	SELECT
+		TxnStartDate,
+		TxnStartTime,
+		PosNumber,
+		PosTxnNumber,
+		SiteNumber,
+		ProductNumber,
+		OfferID,
+		BasketKey,
+		RewardValue,
+		OfferQty,
+		SalesOrg,
+		OfferDiscountFlag,
+		WOWDollarFlag, 
+	FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA.POS_REWARD_LINE_DETAIL\`
+
+	+--------------+--------------+-----------+--------------+------------+---------------+----------+----------------------------+-------------+----------+----------+-------------------+---------------+
+	| TxnStartDate | TxnStartTime | PosNumber | PosTxnNumber | SiteNumber | ProductNumber | OfferID  |         BasketKey          | RewardValue | OfferQty | SalesOrg | OfferDiscountFlag | WOWDollarFlag |
+	+--------------+--------------+-----------+--------------+------------+---------------+----------+----------------------------+-------------+----------+----------+-------------------+---------------+
+	|   2021-09-01 |     12:30:28 | 14        | 2832         | 1317       | 103028-EA     | 11542658 | 20210901123028014028321317 |        38.2 |        4 | 1005     | Y                 | N             |
+	|   2021-09-01 |     16:36:45 | 15        | 3640         | 2883       | 105914-EA     | 10858419 | 20210901163645015036402883 |         2.1 |        3 | 1005     | Y                 | N             |
+	|   2021-09-01 |     15:05:05 | 17        | 7715         | 1759       | 102867-CA1    | 11545134 | 20210901150505017077151759 |          10 |        1 | 1005     | Y                 | N             |
+	|   2021-09-01 |     09:10:05 | 17        | 6607         | 2685       | 102375-EA     | 11545182 | 20210901091005017066072685 |        2.45 |        1 | 1005     | Y                 | N             |
+	|   2021-09-01 |     11:33:32 | 14        | 9296         | 1380       | 103028-EA     | 11542658 | 20210901113332014092961380 |        9.55 |        1 | 1005     | Y                 | N             |
+	|   2021-09-01 |     14:29:27 | 15        | 5770         | 4394       | 103700-EA     | 11542763 | 20210901142927015057704394 |        4.55 |        1 | 1005     | Y                 | N             |
+	|   2021-09-01 |     20:55:31 | 71        | 79           | 1716       | 106317-EA     | NULL     | 20210901205531071000791716 |         2.7 |        0 | 1030     | N                 | N             |
+	|   2021-09-01 |     19:39:51 | 16        | 8423         | 1249       | 102375-EA     | 11545182 | 20210901193951016084231249 |         4.9 |        2 | 1005     | Y                 | N             |
+	|   2021-09-01 |     17:57:29 | 17        | 9213         | 1245       | 103332-EA     | 11542658 | 20210901175729017092131245 |        9.55 |        1 | 1005     | Y                 | N             |
+	|   2021-09-01 |     13:44:40 | 15        | 3541         | 1181       | 103700-EA     | 11542658 | 20210901134440015035411181 |        19.1 |        2 | 1005     | Y                 | N             |
+	+--------------+--------------+-----------+--------------+------------+---------------+----------+----------------------------+-------------+----------+----------+-------------------+---------------+
+
+
+snippet cda_tb_txn_pth_cust sql-snippet
+	SELECT
+		TxnStartDate,
+		TxnStartTime,
+		SiteNumber,
+		SalesOrg,
+		PosNumber,
+		PosTxnNumber,
+		LoyaltyCardNumber,
+		CustomerRegistrationNumber,
+		BasketKey,
+		SalesAmountIncldGst,
+		WOWDollarIncldGst, 
+	FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA.POS_TXN_HEADER_CUST\`
+
+	+--------------+--------------+------------+----------+-----------+--------------+------------------------------------------------------------------------------------------+----------------------------+-----------+---------------------+-------------------+
+	| TxnStartDate | TxnStartTime | SiteNumber | SalesOrg | PosNumber | PosTxnNumber |                                    LoyaltyCardNumber                                     | CustomerRegistrationNumber | BasketKey | SalesAmountIncldGst | WOWDollarIncldGst |
+	+--------------+--------------+------------+----------+-----------+--------------+------------------------------------------------------------------------------------------+----------------------------+-----------+---------------------+-------------------+
+	|   2017-05-20 |     09:19:00 | 1030       | 1005     | 100       | 21257356     | Bc993XUPYWjPryuBlAxuxNXHJr9V3Nb1hR33trq7quHu0P75rbU7TNH+R+T/7dClKt0tAknp3Dac15LkIcNl6Q== | 1000000000001349980        | 21257356  |              298.35 |                 0 |
+	|   2017-05-20 |     09:24:00 | 1030       | 1005     | 100       | 21257417     | NYthWhjd1uddABCqIwDLIqkB1GuFuJ0ZODK9I1E5KDQrPBD08nx36sHZwyaHffy1dLgjLVjWIATWonBxl62CnQ== | 1100000000127050128        | 21257417  |               45.92 |                 0 |
+	|   2017-05-20 |     09:58:00 | 1030       | 1005     | 100       | 21257809     | 8WxfbEg1vF3MV1dOkzQemk5ojv/ara7WIW68eqG7t+H4HsAC8DcOHsni476ZvrXq3ZqLYvjjvBdxJFKUZZ02vw== | 1100000000026105237        | 21257809  |              232.64 |                 0 |
+	|   2017-05-20 |     10:45:00 | 1030       | 1005     | 100       | 21258387     | kITlC5/5w9BC2Ztpt5kLQGXZgu3la4uzI21+Ukkeiqrx3n5l7ev/jdo7b7WGKO6Nk7eDrkhEboxice+H0XqnpQ== | 1000000000002750406        | 21258387  |               53.64 |                 0 |
+	|   2017-05-20 |     10:50:00 | 1030       | 1005     | 100       | 21258466     | VpbLAgDpW6Y8Icw9yecfQYgoj1HGR1upStiR/jn2muFa8hYlj0wNYgQO95wrMyl3HyaoCgfXaNNq3lPk5ODsvA== | 1100000000063793661        | 21258466  |              225.38 |                 0 |
+	|   2017-05-20 |     11:11:00 | 1030       | 1005     | 100       | 21258740     | rFapPYiS07y34G/BpNNTHQ7GwJvCEmBn/UGbaR+BNcktIM56nP6LOufYcpSbjpAd7FXVLDouJntI5ocvwMbkBA== | 1100000000000841310        | 21258740  |              303.92 |                 0 |
+	|   2017-05-20 |     11:32:00 | 1030       | 1005     | 100       | 21259017     | SgLr06cGOKoNcMt3hhHWCUFWIDFR0Pxf60f5RnmFtWmkMRvfkvY4aGlOXar5uEyaBqepLoFDlF21WfV7CkJy8A== | 1100000000083724739        | 21259017  |              193.14 |                 0 |
+	|   2017-05-20 |     11:40:00 | 1030       | 1005     | 100       | 21259129     | 0hkSR4USAFErnY87PsniDGrXS33qvO2vQJkhqY4wnFsbkwO3302iuPMuPDFQKbXBw+PPBS4vT6tNoU6RJuLd8Q== | 1100000000123734121        | 21259129  |              271.66 |                 0 |
+	|   2017-05-20 |     12:16:00 | 1030       | 1005     | 100       | 21259597     | g0KmoW9aXOsHOhiMx8+RJib05a3lAZnVXwsuGJmVuvHAcmCARtUoI6Wff91i4t24aty/IvD3Ql/y6fkC7gPyIA== | 1000000000001289775        | 21259597  |               300.9 |                 0 |
+	|   2017-05-20 |     13:12:00 | 1030       | 1005     | 100       | 21260397     | I6s/qa90GB4Qa/2Y5qwhwSmU7mNo8tgIZkn6mcaDBXh7G1NiMVsQUgfLpAMJcJ7JfRqpdhZlBW403RKKQoyjfg== | 1100000000001807597        | 21260397  |              109.08 |                 0 |
+	+--------------+--------------+------------+----------+-----------+--------------+------------------------------------------------------------------------------------------+----------------------------+-----------+---------------------+-------------------+
+
+
+snippet cda_tb_txn_pil_cust sql-snippet
+	SELECT
+		TxnStartDate,
+		TxnStartTime,
+		SiteNumber,
+		SalesOrg,
+		ProductNumber,
+		PosNumber,
+		PosTxnNumber,
+		LoyaltyCardNumber,
+		CustomerRegistrationNumber,
+		BasketKey,
+		ProductQuantity,
+		MeasuredQuantity,
+		RetailAmountIncldGst,
+		WOWDollarIncldGst,
+		WOWDollarExcldGst,
+	FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA.POS_ITEM_LINE_DETAIL_CUST\`
+
+	+--------------+--------------+------------+----------+---------------+-----------+--------------+------------------------------------------------------------------------------------------+----------------------------+----------------------------+-----------------+------------------+----------------------+-------------------+-------------------+
+	| TxnStartDate | TxnStartTime | SiteNumber | SalesOrg | ProductNumber | PosNumber | PosTxnNumber |                                    LoyaltyCardNumber                                     | CustomerRegistrationNumber |         BasketKey          | ProductQuantity | MeasuredQuantity | RetailAmountIncldGst | WOWDollarIncldGst | WOWDollarExcldGst |
+	+--------------+--------------+------------+----------+---------------+-----------+--------------+------------------------------------------------------------------------------------------+----------------------------+----------------------------+-----------------+------------------+----------------------+-------------------+-------------------+
+	|   2021-09-01 |     16:56:51 | 2042       | 1030     | 1079-EA       | 82        | 9309         | kO+26yubnH1G2768XYYWe7fripJiWO1cQjDkpKF8t0K3V+jm9znKtan71UX7ES5TMFIRMJp3wvaT6QDDGYLBsA== | 3300000000005100256        | 20210901165651082093092042 |               6 |                0 |                11.28 |              0.12 |              0.11 |
+	|   2021-09-01 |     11:36:32 | 5618       | 1005     | 1079-EA       | 2         | 7331         | uN11d6BgIC9ETuv4JQ0I7KZy59HpatBgJMwbjPRs7x8PYQf7F7MDbw4UX4hpQ6vojeANnn9UBzqhcY0JbMCVHA== | 1100000000001320898        | 20210901113632002073315618 |               6 |                0 |                29.86 |              0.14 |              0.13 |
+	|   2021-09-01 |     10:23:38 | 5647       | 1005     | 1100-EA       | 3         | 3252         | 2pbjGyRyh1IFQq+DCGQqwGGfmAu/nz9NOd3wbu7eVr69O9B7jtvSjVjbbyIB/3xGahFPD13RYojUOeidOidYBA== | 1100000000136765171        | 20210901102338003032525647 |               6 |                0 |                17.88 |              0.12 |              0.11 |
+	|   2021-09-01 |     14:38:47 | 5610       | 1005     | 1100-EA       | 4         | 172          | 93Ry2NXBTM2pCUorK2r/fLMpN14SZKm7mjFL9PhMBO478RVt7X9PM4+sssCtWxJOLcnwvh0ggS2VOrOPVQ0CZg== | 3300000000003075503        | 20210901143847004001725610 |              10 |                0 |                29.88 |              0.12 |              0.11 |
+	|   2021-09-01 |     14:29:06 | 1648       | 1005     | 1100-EA       | 5         | 7098         | IH8wCrjoowpsj6fySx9IXPQ2uYng4CcRnZJsa4tQn/G7qfIrGvgXfc3omNSaxAgzfbKXTw/oPwGScmBPk3n58A== | 1100000000089628966        | 20210901142906005070981648 |              12 |                0 |                35.82 |              0.18 |              0.16 |
+	|   2021-09-01 |     14:44:49 | 3121       | 1005     | 1100-EA       | 4         | 4269         | vUaNxCcYrp4/SqUFtN3tDhV7YE2+Sg7lb+qA0h6MlXoaoDNRM18oBMcDWfRKE0MhKRMJbM2TuE6tzAhJaXRNkQ== | 1100000000083645262        | 20210901144449004042693121 |              10 |                0 |                29.87 |              0.13 |              0.12 |
+	|   2021-09-01 |     08:17:51 | 2761       | 1005     | 1221-EA       | 6         | 1206         | 03IwSwbPr0K9mYTfsuftjfPBOuYSeKT3RhVcrBC03Wy2VXFBzJd6yZr4LFwFtzag94G7zaRf3EIrx91CM/0siw== | 1000000000002677235        | 20210901081751006012062761 |               6 |                0 |                52.53 |              0.27 |              0.27 |
+	|   2021-09-01 |     13:13:18 | 4155       | 1005     | 1221-EA       | 6         | 6930         | cSGEdVMHW9i5mtRT8gUTxJpFoB2cvFnvVZNksKvgVl+vBOyxJad8hZ1lCXBEFD0L3evCGIUKca/SBXfM4BnmSA== | 1100000000056095649        | 20210901131318006069304155 |               6 |                0 |                52.55 |              0.25 |              0.25 |
+	|   2021-09-01 |     09:39:34 | 2593       | 1005     | 1221-EA       | 1         | 2295         | OCnL8FzmjCNZcfIUPtgai25tdNuXenILnToJzzx+OTxeRAU6RedpCgiwxmTuIsi8syD4JZXQMoRpINIOnqBEbw== | 1100000000086199300        | 20210901093934001022952593 |               5 |                0 |                43.79 |              0.21 |              0.21 |
+	|   2021-09-01 |     16:49:19 | 1472       | 1005     | 1221-EA       | 83        | 3139         | VvNxVKAh8v87puGkU7luyner4nfPsjSVW7S+ee2/1lynwkDWu0OFi7cfTSc6HdEgrF8CR9RnHfH298rbYZpB4g== | 1100000000080380200        | 20210901164919083031391472 |               5 |                0 |                43.79 |              0.21 |              0.21 |
+	+--------------+--------------+------------+----------+---------------+-----------+--------------+------------------------------------------------------------------------------------------+----------------------------+----------------------------+-----------------+------------------+----------------------+-------------------+-------------------+
+
+
+snippet cda_tb_online_mapping sql-snippet
+	SELECT
+		OriginalTxnStartDate,
+		OriginalTxnStartTime,
+		OriginalSiteNumber,
+		OriginalPosNumber,
+		OriginalPosTxnNumber,
+		OriginalBasketKey,
+		CustomerOrderNumber,
+		NewTxnStartDate,
+		NewTxnStartTime,
+		NewSiteNumber,
+		NewPosNumber,
+		NewPosTxnNumber,
+		IneligibleTransaction,
+	FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\`
+
+	+----------------------+----------------------+--------------------+-------------------+----------------------+----------------------------+---------------------+-----------------+-----------------+---------------+--------------+-----------------+-----------------------+
+	| OriginalTxnStartDate | OriginalTxnStartTime | OriginalSiteNumber | OriginalPosNumber | OriginalPosTxnNumber |     OriginalBasketKey      | CustomerOrderNumber | NewTxnStartDate | NewTxnStartTime | NewSiteNumber | NewPosNumber | NewPosTxnNumber | IneligibleTransaction |
+	+----------------------+----------------------+--------------------+-------------------+----------------------+----------------------------+---------------------+-----------------+-----------------+---------------+--------------+-----------------+-----------------------+
+	|           2022-09-01 |             23:53:00 | 1143               | 100               | 7961                 | 20220901235300100079611143 | 132143553           |      2022-09-01 |        15:25:00 | 1143          | 100          | 132143553       |                 false |
+	|           2022-09-01 |             08:19:00 | 1111               | 100               | 3292                 | 20220901081900100032921111 | 133029868           |      2022-08-31 |        20:16:00 | 1111          | 100          | 133029868       |                 false |
+	|           2022-09-01 |             22:18:00 | 1268               | 100               | 2147                 | 20220901221800100021471268 | 133013945           |      2022-08-31 |        17:45:00 | 1268          | 100          | 133013945       |                 false |
+	|           2022-09-01 |             13:02:00 | 1087               | 100               | 5767                 | 20220901130200100057671087 | 133064747           |      2022-09-01 |        07:45:00 | 1087          | 100          | 133064747       |                 false |
+	|           2022-09-01 |             08:16:00 | 1137               | 100               | 5707                 | 20220901081600100057071137 | 132994184           |      2022-08-31 |        13:52:00 | 1137          | 100          | 132994184       |                 false |
+	|           2022-09-01 |             15:26:00 | 1136               | 100               | 2362                 | 20220901152600100023621136 | 133041179           |      2022-08-31 |        22:19:00 | 1136          | 100          | 133041179       |                 false |
+	|           2022-09-01 |             23:43:00 | 1205               | 100               | 4867                 | 20220901234300100048671205 | 133099018           |      2022-09-01 |        13:54:00 | 1205          | 100          | 133099018       |                 false |
+	|           2022-09-01 |             14:03:00 | 1205               | 100               | 7542                 | 20220901140300100075421205 | 132999059           |      2022-08-31 |        14:50:00 | 1205          | 100          | 132999059       |                 false |
+	|           2022-09-01 |             04:40:00 | 1209               | 100               | 4610                 | 20220901044000100046101209 | 133015371           |      2022-08-31 |        17:58:00 | 1209          | 100          | 133015371       |                 false |
+	|           2022-09-01 |             10:29:00 | 1226               | 100               | 3243                 | 20220901102900100032431226 | 133077297           |      2022-09-01 |        10:07:00 | 1226          | 100          | 133077297       |                 false |
+	+----------------------+----------------------+--------------------+-------------------+----------------------+----------------------------+---------------------+-----------------+-----------------+---------------+--------------+-----------------+-----------------------+
+
+
+snippet cda_tb_ref_prl sql-snippet
+	SELECT
+		TxnStartDate,
+		TxnStartTime,
+		SiteNumber,
+		PosNumber,
+		PosTxnNumber,
+		ProductNumber,
+		OfferID,
+		Action,
+		NewRewardValue,
+		NewOfferQty,
+		NewOfferDiscountFlag,
+		NewWOWDollarFlag
+	FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.REF_ASSET_POS_REWARD_LINE_DETAIL\`
+
+	+--------------+--------------+------------+-----------+--------------+---------------+---------+--------+----------------+-------------+----------------------+------------------+
+	| TxnStartDate | TxnStartTime | SiteNumber | PosNumber | PosTxnNumber | ProductNumber | OfferID | Action | NewRewardValue | NewOfferQty | NewOfferDiscountFlag | NewWOWDollarFlag |
+	+--------------+--------------+------------+-----------+--------------+---------------+---------+--------+----------------+-------------+----------------------+------------------+
+	|   2014-09-19 |     07:52:00 | 2643       | 16        | 3189         | 710156-EA     | 104493  | Delete |           20.6 |        2060 | N                    | N                |
+	|   2015-03-09 |     19:10:17 | 2643       | 16        | 5450         | 710156-EA     | 2636369 | Delete |             20 |        2000 | N                    | N                |
+	|   2016-05-01 |     17:10:49 | 1199       | 82        | 6030         | 480272-KG     | 2       | Delete |            1.4 |           1 | N                    | N                |
+	|   2016-05-05 |     20:50:23 | 2078       | 83        | 3158         | 480272-KG     | 64306   | Delete |             10 |           1 | N                    | N                |
+	|   2016-06-20 |     14:59:17 | 2620       | 14        | 3828         | 480272-KG     | NULL    | Delete |          16.76 |     2794000 | N                    | N                |
+	|   2016-09-02 |     15:53:58 | 2680       | 4         | 3332         | 769243-EA     | NULL    | Delete |           80.5 |        2340 | N                    | N                |
+	|   2016-09-13 |     09:49:21 | 2900       | 83        | 340          | 480272-KG     | NULL    | Delete |          30.56 |     6114000 | N                    | N                |
+	|   2016-10-07 |     14:24:55 | 5647       | 3         | 7468         | 351196-EA     | NULL    | Delete |            931 |       20736 | N                    | N                |
+	|   2016-11-25 |     13:36:10 | 4385       | 5         | 5254         | 715407-EA     | NULL    | Delete |              8 |        2739 | N                    | N                |
+	|   2016-12-06 |     12:39:46 | 5600       | 83        | 4083         | 751027-EA     | NULL    | Delete |            163 |        2200 | N                    | N                |
+	+--------------+--------------+------------+-----------+--------------+---------------+---------+--------+----------------+-------------+----------------------+------------------+
+
+
+snippet cda_tb_ref_pil sql-snippet
+	SELECT
+		TxnStartDate,
+		TxnStartTime,
+		SiteNumber,
+		PosNumber,
+		PosTxnNumber,
+		ProductNumber,
+		Action,
+		NewLoyaltyCardNumber,
+		NewProductQuantity,
+		NewMeasuredQuantity,
+		NewRetailAmountIncldGst,
+		NewRetailAmountExcldGst,
+		NewWOWDollarIncldGst,
+		NewWOWDollarExcldGst,
+	FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.REF_ASSET_POS_ITEM_LINE_DETAIL\`
+
+	+--------------+--------------+------------+-----------+--------------+---------------+--------+----------------------+--------------------+---------------------+-------------------------+-------------------------+----------------------+----------------------+
+	| TxnStartDate | TxnStartTime | SiteNumber | PosNumber | PosTxnNumber | ProductNumber | Action | NewLoyaltyCardNumber | NewProductQuantity | NewMeasuredQuantity | NewRetailAmountIncldGst | NewRetailAmountExcldGst | NewWOWDollarIncldGst | NewWOWDollarExcldGst |
+	+--------------+--------------+------------+-----------+--------------+---------------+--------+----------------------+--------------------+---------------------+-------------------------+-------------------------+----------------------+----------------------+
+	|   2014-06-14 |     15:39:15 | 3115       | 8         | 5613         | 742806-KG     | Delete | NULL                 |                 -1 |               -2192 |                    NULL |                    NULL |                 NULL |                 NULL |
+	|   2014-08-28 |     10:35:27 | 2627       | 8         | 2252         | 193083-KG     | Delete | NULL                 |                  3 |               12870 |                    NULL |                    NULL |                 NULL |                 NULL |
+	|   2014-08-29 |     09:31:13 | 2627       | 8         | 2694         | 193083-KG     | Delete | NULL                 |                  1 |                6980 |                    NULL |                    NULL |                 NULL |                 NULL |
+	|   2014-09-01 |     10:02:08 | 2627       | 5         | 1833         | 193083-KG     | Delete | NULL                 |                  3 |               15556 |                    NULL |                    NULL |                 NULL |                 NULL |
+	|   2014-09-03 |     10:16:59 | 2627       | 1         | 692          | 193083-KG     | Delete | NULL                 |                  1 |                6976 |                    NULL |                    NULL |                 NULL |                 NULL |
+	|   2014-09-05 |     10:13:59 | 2627       | 1         | 1010         | 193083-KG     | Delete | NULL                 |                  2 |                8580 |                    NULL |                    NULL |                 NULL |                 NULL |
+	|   2014-09-05 |     13:41:44 | 2627       | 5         | 1944         | 193083-KG     | Delete | NULL                 |                  1 |                8980 |                    NULL |                    NULL |                 NULL |                 NULL |
+	|   2014-09-08 |     09:49:17 | 2627       | 5         | 1981         | 193083-KG     | Delete | NULL                 |                  1 |                4290 |                    NULL |                    NULL |                 NULL |                 NULL |
+	|   2014-09-09 |     09:07:08 | 2627       | 1         | 1554         | 193083-KG     | Delete | NULL                 |                  1 |                8900 |                    NULL |                    NULL |                 NULL |                 NULL |
+	|   2014-09-15 |     09:28:02 | 2627       | 5         | 84           | 193083-KG     | Delete | NULL                 |                  3 |               12156 |                    NULL |                    NULL |                 NULL |                 NULL |
+	+--------------+--------------+------------+-----------+--------------+---------------+--------+----------------------+--------------------+---------------------+-------------------------+-------------------------+----------------------+----------------------+
+
+
+snippet cda_tb_dim_date sql-snippet
+
+snippet cda_tb_dim_prod_hist sql-snippet
+snippet cda_tb_dim_prod_curr sql-snippet
+
+snippet cda_tb_dim_site_prod_hist sql-snippet
+snippet cda_tb_dim_site_prod_curr sql-snippet
+
+snippet cda_tb_dim_cust sql-snippet
+
+snippet cda_check_au_hist sql-snippet
+	-- Update Check_Date Variable
+	-- Pull data for both 1005,1030
+	-- Keep Schema as WOOLWORTHS_AUS_CDA_ETL
+
+	DECLARE Check_Date DATE DEFAULT '2024-04-02';
+
+	WITH CURR_YEAR AS (
+		SELECT
+			'Offline' AS CHANNEL,
+			TxnStartDate,
+			SalesOrg,
+			COUNT(DISTINCT basketkey) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_ITEM_LINE_DETAIL\`
+		WHERE TxnStartDate BETWEEN DATE_SUB(Check_Date, INTERVAL 4 WEEK) AND Check_Date
+			AND Posnumber != '100'
+		GROUP BY TxnStartDate, SalesOrg
+
+		UNION ALL
+
+		SELECT
+			'Online' AS CHANNEL,
+			pth.OriginalTxnStartDate AS TxnStartDate,
+			pil.SalesOrg AS SalesOrg,
+			MAX(pthb.BASKET_COUNT) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS pil
+		LEFT OUTER JOIN (
+			SELECT
+				NewTxnStartDate,
+				NewTxnStartTime,
+				NewSiteNumber,
+				NewPosNumber,
+				NewPosTxnNumber,
+				MAX(OriginalTxnStartDate) AS OriginalTxnStartDate
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\`
+			GROUP BY 1, 2, 3, 4, 5
+		) AS pth
+			ON pil.TxnStartDate = pth.NewTxnStartDate
+			AND pil.TxnStartTime = pth.NewTxnStartTime
+			AND pil.posnumber = pth.NewPosNumber
+			AND pil.sitenumber = pth.NewSiteNumber
+			AND pil.PosTxnNumber = pth.NewPosTxnNumber
+		LEFT OUTER JOIN (
+			SELECT
+				OriginalTxnStartDate,
+				site.SalesOrg,
+				COUNT(DISTINCT OriginalBasketKey) AS BASKET_COUNT
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\` AS bask
+			LEFT OUTER JOIN gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.DIM_SITE_CURR_V AS site
+				ON bask.OriginalSiteNumber = site.SiteNumber
+			WHERE OriginalPosNumber = '100'
+			GROUP BY 1, 2
+		) AS pthb
+			ON pth.OriginalTxnStartDate = pthb.OriginalTxnStartDate
+			AND pil.SalesOrg = pthb.SalesOrg
+		WHERE pth.OriginalTxnStartDate BETWEEN DATE_SUB(Check_Date, INTERVAL 4 WEEK) AND Check_Date
+			AND PosNumber = '100'
+		GROUP BY pth.OriginalTxnStartDate, pil.SalesOrg
+	),
+
+	PAST_YEAR AS (
+		SELECT
+			'Offline' AS CHANNEL,
+			DATE_ADD(TxnStartDate, INTERVAL 52 WEEK) AS TxnStartDate,
+			SalesOrg,
+			COUNT(DISTINCT basketkey) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_ITEM_LINE_DETAIL\`
+		WHERE TxnStartDate BETWEEN DATE_SUB(Check_Date, INTERVAL 56 WEEK) AND DATE_SUB(Check_Date, INTERVAL 52 WEEK)
+			AND Posnumber != '100'
+		GROUP BY TxnStartDate, SalesOrg
+
+		UNION ALL
+
+		SELECT
+			'Online' AS CHANNEL,
+			DATE_ADD(pth.OriginalTxnStartDate, INTERVAL 52 WEEK) AS TxnStartDate,
+			pil.SalesOrg AS SalesOrg,
+			MAX(pthb.BASKET_COUNT) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS pil
+		LEFT OUTER JOIN (
+			SELECT
+				NewTxnStartDate,
+				NewTxnStartTime,
+				NewSiteNumber,
+				NewPosNumber,
+				NewPosTxnNumber,
+				MAX(OriginalTxnStartDate) AS OriginalTxnStartDate
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\`
+			GROUP BY 1, 2, 3, 4, 5
+		) AS pth
+			ON pil.TxnStartDate = pth.NewTxnStartDate
+			AND pil.TxnStartTime = pth.NewTxnStartTime
+			AND pil.posnumber = pth.NewPosNumber
+			AND pil.sitenumber = pth.NewSiteNumber
+			AND pil.PosTxnNumber = pth.NewPosTxnNumber
+		LEFT OUTER JOIN (
+			SELECT
+				OriginalTxnStartDate,
+				site.SalesOrg,
+				COUNT(DISTINCT OriginalBasketKey) AS BASKET_COUNT
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\` AS bask
+			LEFT OUTER JOIN gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.DIM_SITE_CURR_V AS site
+				ON bask.OriginalSiteNumber = site.SiteNumber
+			WHERE OriginalPosNumber = '100'
+			GROUP BY 1, 2
+		) AS pthb
+			ON pth.OriginalTxnStartDate = pthb.OriginalTxnStartDate
+			AND pil.SalesOrg = pthb.SalesOrg
+		WHERE pth.OriginalTxnStartDate BETWEEN DATE_SUB(Check_Date, INTERVAL 56 WEEK) AND DATE_SUB(Check_Date, INTERVAL 52 WEEK)
+			AND PosNumber = '100'
+		GROUP BY pth.OriginalTxnStartDate, pil.SalesOrg
+	)
+
+	SELECT
+		CURR_YEAR.TxnStartDate AS TXNSTARTDATE,
+		CURR_YEAR.SalesOrg AS SALESORG,
+		CURR_YEAR.CHANNEL AS ONLINE_FLAG,
+		CURR_YEAR.SALES AS SALES,
+		PAST_YEAR.SALES AS HIST_SALES,
+		CURR_YEAR.BASKET_COUNT AS BASKET_COUNT,
+		PAST_YEAR.BASKET_COUNT AS HIST_BASKET_COUNT
+	FROM CURR_YEAR
+	INNER JOIN PAST_YEAR
+		ON CURR_YEAR.TxnStartDate = PAST_YEAR.TxnStartDate
+		AND CURR_YEAR.CHANNEL = PAST_YEAR.CHANNEL
+		AND CURR_YEAR.SalesOrg = PAST_YEAR.SalesOrg
+	ORDER BY 1, 2, 3
+	;
+
+
+snippet cda_check_au_hist_adj_date sql-snippet
+	-- When need to align TY and LY's date: 
+	-- e.g Easter are diffrent in TY(Easter Monday 20240401) and LY (Easter Monday 20230410)
+	-- TY and LY diffrence are 51 weeks: select DATE_ADD('2023-04-10', INTERVAL 51 WEEK) 
+
+	-- Update Check_Date TY and LY Variable
+	-- Update LY date add week, e.g 51 to map TY date
+	-- Pull data for both 1005,1030
+	-- Keep Schema as WOOLWORTHS_AUS_CDA_ETL
+
+	DECLARE Check_Date_TY DATE DEFAULT '2024-04-07';
+	DECLARE Check_Date_LY DATE DEFAULT '2023-04-16';
+
+	WITH CURR_YEAR AS (
+		SELECT
+			'Offline' AS CHANNEL,
+			TxnStartDate,
+			SalesOrg,
+			COUNT(DISTINCT basketkey) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_ITEM_LINE_DETAIL\`
+		WHERE TxnStartDate BETWEEN DATE_SUB(Check_Date_TY, INTERVAL 4 WEEK) AND Check_Date_TY
+			AND Posnumber != '100'
+		GROUP BY TxnStartDate, SalesOrg
+
+		UNION ALL
+
+		SELECT
+			'Online' AS CHANNEL,
+			pth.OriginalTxnStartDate AS TxnStartDate,
+			pil.SalesOrg AS SalesOrg,
+			MAX(pthb.BASKET_COUNT) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS pil
+		LEFT OUTER JOIN (
+			SELECT
+				NewTxnStartDate,
+				NewTxnStartTime,
+				NewSiteNumber,
+				NewPosNumber,
+				NewPosTxnNumber,
+				MAX(OriginalTxnStartDate) AS OriginalTxnStartDate
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\`
+
+			GROUP BY 1, 2, 3, 4, 5
+		) AS pth
+			ON pil.TxnStartDate = pth.NewTxnStartDate
+			AND pil.TxnStartTime = pth.NewTxnStartTime
+			AND pil.posnumber = pth.NewPosNumber
+			AND pil.sitenumber = pth.NewSiteNumber
+			AND pil.PosTxnNumber = pth.NewPosTxnNumber
+		LEFT OUTER JOIN (
+			SELECT
+				OriginalTxnStartDate,
+				site.SalesOrg,
+				COUNT(DISTINCT OriginalBasketKey) AS BASKET_COUNT
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\` AS bask
+			LEFT OUTER JOIN gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.DIM_SITE_CURR_V AS site
+				ON bask.OriginalSiteNumber = site.SiteNumber
+			WHERE OriginalPosNumber = '100'
+			GROUP BY 1, 2
+		) AS pthb
+			ON pth.OriginalTxnStartDate = pthb.OriginalTxnStartDate
+			AND pil.SalesOrg = pthb.SalesOrg
+		WHERE pth.OriginalTxnStartDate BETWEEN DATE_SUB(Check_Date_TY, INTERVAL 4 WEEK) AND Check_Date_TY
+			AND PosNumber = '100'
+		GROUP BY pth.OriginalTxnStartDate, pil.SalesOrg
+	),
+
+	PAST_YEAR AS (
+		SELECT
+			'Offline' AS CHANNEL,
+			DATE_ADD(TxnStartDate, INTERVAL 51 WEEK) AS TxnStartDate,
+			SalesOrg,
+			COUNT(DISTINCT basketkey) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_ITEM_LINE_DETAIL\`
+		WHERE TxnStartDate BETWEEN DATE_SUB(Check_Date_LY, INTERVAL 4 WEEK) AND Check_Date_LY
+			AND Posnumber != '100'
+		GROUP BY TxnStartDate, SalesOrg
+
+		UNION ALL
+
+		SELECT
+			'Online' AS CHANNEL,
+			DATE_ADD(pth.OriginalTxnStartDate, INTERVAL 51 WEEK) AS TxnStartDate,
+			pil.SalesOrg AS SalesOrg,
+			MAX(pthb.BASKET_COUNT) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS pil
+		LEFT OUTER JOIN (
+			SELECT
+				NewTxnStartDate,
+				NewTxnStartTime,
+				NewSiteNumber,
+				NewPosNumber,
+				NewPosTxnNumber,
+				MAX(OriginalTxnStartDate) AS OriginalTxnStartDate
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\`
+			GROUP BY 1, 2, 3, 4, 5
+		) AS pth
+			ON pil.TxnStartDate = pth.NewTxnStartDate
+			AND pil.TxnStartTime = pth.NewTxnStartTime
+			AND pil.posnumber = pth.NewPosNumber
+			AND pil.sitenumber = pth.NewSiteNumber
+			AND pil.PosTxnNumber = pth.NewPosTxnNumber
+		LEFT OUTER JOIN (
+			SELECT
+				OriginalTxnStartDate,
+				site.SalesOrg,
+				COUNT(DISTINCT OriginalBasketKey) AS BASKET_COUNT
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\` AS bask
+			LEFT OUTER JOIN gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.DIM_SITE_CURR_V AS site
+				ON bask.OriginalSiteNumber = site.SiteNumber
+			WHERE OriginalPosNumber = '100'
+			GROUP BY 1, 2
+		) AS pthb
+			ON pth.OriginalTxnStartDate = pthb.OriginalTxnStartDate
+			AND pil.SalesOrg = pthb.SalesOrg
+		WHERE pth.OriginalTxnStartDate BETWEEN DATE_SUB(Check_Date_LY, INTERVAL 4 WEEK) AND Check_Date_LY
+			AND PosNumber = '100'
+		GROUP BY pth.OriginalTxnStartDate, pil.SalesOrg
+	)
+
+	SELECT
+		CURR_YEAR.TxnStartDate AS TXNSTARTDATE,
+		CURR_YEAR.SalesOrg AS SALESORG,
+		CURR_YEAR.CHANNEL AS ONLINE_FLAG,
+		CURR_YEAR.SALES AS SALES,
+		PAST_YEAR.SALES AS HIST_SALES,
+		CURR_YEAR.BASKET_COUNT AS BASKET_COUNT,
+		PAST_YEAR.BASKET_COUNT AS HIST_BASKET_COUNT
+	FROM CURR_YEAR
+	INNER JOIN PAST_YEAR
+		ON CURR_YEAR.TxnStartDate = PAST_YEAR.TxnStartDate
+		AND CURR_YEAR.CHANNEL = PAST_YEAR.CHANNEL
+		AND CURR_YEAR.SalesOrg = PAST_YEAR.SalesOrg
+	ORDER BY 1, 2, 3
+	;
+
+
+
+snippet cda_check_au_trend_cda sql-snippet
+	-- Update Check_Date Variable
+	-- Pull data for both 1005 and 1030
+	-- Keep Schema as WOOLWORTHS_AUS_CDA_ETL
+	-- Use MAX(OriginalTxnStartDate) AS FULLFILLMENT
+
+	DECLARE Check_Date DATE DEFAULT '2024-04-07';
+
+	WITH Last_4week_CDA AS (
+		SELECT
+			'CDA' AS SOURCE,
+			PSS.TxnStartDate AS TXNSTARTDATE,
+			PSS.SALESORG AS SALESORG,
+			'Offline' AS ONLINE_FLAG,
+			COUNT(DISTINCT BASKETKEY) AS BASKETS,
+			SUM(RetailAmountIncldGst) AS SALES,
+			SUM(WOWDollarIncldGst) AS WOWDOLLAR,
+			SUM(RetailAmountIncldGst) + SUM(WOWDollarIncldGst) AS GROSSSALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS PSS
+		WHERE PSS.TxnStartDate BETWEEN DATE_SUB(DATE(Check_Date), INTERVAL 4 WEEK) AND DATE(Check_Date)
+			AND PosNumber NOT IN ('100')
+			AND SALESORG IN ('1005', '1030')
+		GROUP BY 1, 2, 3, 4
+
+		UNION ALL
+
+		SELECT
+			'CDA' AS SOURCE,
+			pth.OriginalTxnStartDate AS TXNSTARTDATE,
+			PSS.SalesOrg AS SALESORG,
+			'Online' AS ONLINE_FLAG,
+			MAX(pthb.BASKET_COUNT) AS BASKETS,
+			SUM(RetailAmountIncldGst) AS SALES,
+			SUM(WOWDollarIncldGst) AS WOWDOLLAR,
+			SUM(RetailAmountIncldGst) + SUM(WOWDollarIncldGst) AS GROSSSALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS PSS
+		LEFT OUTER JOIN (
+			SELECT
+				NewTxnStartDate,
+				NewTxnStartTime,
+				NewSiteNumber,
+				NewPosNumber,
+				NewPosTxnNumber,
+				MAX(OriginalTxnStartDate) AS OriginalTxnStartDate
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\`
+			WHERE NewPosNumber IN ('100')
+			GROUP BY 1, 2, 3, 4, 5
+		) AS pth
+			ON PSS.TxnStartDate = pth.NewTxnStartDate
+			AND PSS.TxnStartTime = pth.NewTxnStartTime
+			AND PSS.posnumber = pth.NewPosNumber
+			AND PSS.sitenumber = pth.NewSiteNumber
+			AND PSS.PosTxnNumber = pth.NewPosTxnNumber
+		LEFT OUTER JOIN ( --Baskets associated with salesorg for a particular date before potential site changes 
+			SELECT
+				OriginalTxnStartDate,
+				site.SalesOrg,
+				COUNT(DISTINCT OriginalBasketKey) AS BASKET_COUNT
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\` AS bask
+			LEFT OUTER JOIN \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA.DIM_SITE_CURR_V\` AS site
+				ON bask.OriginalSiteNumber = site.SiteNumber
+			WHERE NewPosNumber IN ('100')
+			GROUP BY 1, 2
+		) AS pthb
+			ON pth.OriginalTxnStartDate = pthb.OriginalTxnStartDate
+			AND PSS.SalesOrg = pthb.SalesOrg
+		WHERE pth.OriginalTxnStartDate BETWEEN DATE_SUB(DATE(Check_Date), INTERVAL 4 WEEK) AND Check_Date
+			AND PSS.PosNumber IN ('100')
+			AND PSS.SalesOrg IN ('1005', '1030')
+		GROUP BY 1, 2, 3, 4
+	)
+
+	SELECT *
+	FROM Last_4week_CDA
+	ORDER BY 1, 2, 3, 4
+	;
+
+
+snippet cda_check_au_trend_adp sql-snippet
+	-- Update date {YYYY-MM-DD}
+	-- Pull data for both 1005 and 1030
+	-- Change Super to Metro conversion stores' sales org to 1030 to align with CDA
+
+	SELECT
+		'ADP' AS SOURCE,
+		TXN_START_DATE,
+		CASE WHEN SITE_NUMBER IN ('1050', '1188', '1681', '2696', '2702', '3210', '3246', '3313', '3405') THEN '1030' ELSE SALES_ORG END AS SALES_ORG,
+		CASE WHEN POS_NUMBER = '100' THEN 'Online' ELSE 'Offline' END AS ONLINE_FLAG,
+		COUNT(DISTINCT BASKET_KEY) AS BASKETKEY,
+		SUM(TOTAL_AMOUNT_INCLD_GST) AS SALES,
+		SUM(TOTAL_WOW_DOLLAR_INCLD_GST) AS WOWDOLLAR,
+		SUM(TOTAL_GROSS_INCLD_GST) AS GROSSSALES
+	FROM WOWEDW_PRD.ADP.QTM_POS_ITEM_LINE_CURR
+	WHERE TXN_START_DATE BETWEEN DATEADD(DAY, -28, '{YYYY-MM-DD}') AND '{YYYY-MM-DD}'
+		AND SALES_ORG IN ('1030', '1005')
+	GROUP BY 1, 2, 3, 4
+	ORDER BY 1, 3, 2, 4
+	;
+
+
+snippet cda_check_nz_hist sql-snippet
+	-- Update date {YYYY-MM-DD}
+	-- Update Check_Date Variable
+	-- Keep Sales_Org Variable as 2010
+	-- Keep Schema as WOOLWORTHS_NZ_CDA_ETL
+
+	DECLARE Check_Date DATE DEFAULT '2024-03-17';
+	DECLARE Sales_Org STRING DEFAULT '2010';
+
+	WITH CURR_YEAR AS (
+		SELECT
+			'Offline' AS CHANNEL,
+			TxnStartDate,
+			SalesOrg,
+			COUNT(DISTINCT basketkey) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.POS_ITEM_LINE_DETAIL\`
+		WHERE TxnStartDate BETWEEN DATE_SUB(Check_Date, INTERVAL 4 WEEK) AND Check_Date
+			AND Posnumber != '100'
+		GROUP BY TxnStartDate, SalesOrg
+
+		UNION ALL
+
+		SELECT
+			'Online' AS CHANNEL,
+			pth.OriginalTxnStartDate AS TxnStartDate,
+			pil.SalesOrg AS SalesOrg,
+			MAX(pthb.BASKET_COUNT) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS pil
+		LEFT OUTER JOIN (
+			SELECT
+				NewTxnStartDate,
+				NewTxnStartTime,
+				NewSiteNumber,
+				NewPosNumber,
+				NewPosTxnNumber,
+				MAX(OriginalTxnStartDate) AS OriginalTxnStartDate
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\`
+			GROUP BY 1, 2, 3, 4, 5
+		) AS pth
+			ON pil.TxnStartDate = pth.NewTxnStartDate
+			AND pil.TxnStartTime = pth.NewTxnStartTime
+			AND pil.posnumber = pth.NewPosNumber
+			AND pil.sitenumber = pth.NewSiteNumber
+			AND pil.PosTxnNumber = pth.NewPosTxnNumber
+		LEFT OUTER JOIN (
+			SELECT
+				OriginalTxnStartDate,
+				site.SalesOrg,
+				COUNT(DISTINCT OriginalBasketKey) AS BASKET_COUNT
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\` AS bask
+			LEFT OUTER JOIN \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.DIM_SITE_CURR_V\` AS site
+				ON bask.OriginalSiteNumber = site.SiteNumber
+			WHERE OriginalPosNumber = '100'
+			GROUP BY 1, 2
+		) AS pthb
+			ON pth.OriginalTxnStartDate = pthb.OriginalTxnStartDate
+			AND pil.SalesOrg = pthb.SalesOrg
+		WHERE pth.OriginalTxnStartDate BETWEEN DATE_SUB(Check_Date, INTERVAL 4 WEEK) AND Check_Date
+			AND PosNumber = '100'
+		GROUP BY pth.OriginalTxnStartDate, pil.SalesOrg
+	),
+
+	PAST_YEAR AS (
+		SELECT
+			'Offline' AS CHANNEL,
+			DATE_ADD(TxnStartDate, INTERVAL 52 WEEK) AS TxnStartDate,
+			SalesOrg,
+			COUNT(DISTINCT basketkey) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.POS_ITEM_LINE_DETAIL\`
+		WHERE TxnStartDate BETWEEN DATE_SUB(Check_Date, INTERVAL 56 WEEK) AND DATE_SUB(Check_Date, INTERVAL 52 WEEK)
+			AND Posnumber != '100'
+		GROUP BY TxnStartDate, SalesOrg
+
+		UNION ALL
+
+		SELECT
+			'Online' AS CHANNEL,
+			DATE_ADD(pth.OriginalTxnStartDate, INTERVAL 52 WEEK) AS TxnStartDate,
+			pil.SalesOrg AS SalesOrg,
+			MAX(pthb.BASKET_COUNT) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS pil
+		LEFT OUTER JOIN (
+			SELECT
+				NewTxnStartDate,
+				NewTxnStartTime,
+				NewSiteNumber,
+				NewPosNumber,
+				NewPosTxnNumber,
+				MAX(OriginalTxnStartDate) AS OriginalTxnStartDate
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\`
+			GROUP BY 1, 2, 3, 4, 5
+		) AS pth
+			ON pil.TxnStartDate = pth.NewTxnStartDate
+			AND pil.TxnStartTime = pth.NewTxnStartTime
+			AND pil.posnumber = pth.NewPosNumber
+			AND pil.sitenumber = pth.NewSiteNumber
+			AND pil.PosTxnNumber = pth.NewPosTxnNumber
+		LEFT OUTER JOIN (
+			SELECT
+				OriginalTxnStartDate,
+				site.SalesOrg,
+				COUNT(DISTINCT OriginalBasketKey) AS BASKET_COUNT
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\` AS bask
+			LEFT OUTER JOIN \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.DIM_SITE_CURR_V\` AS site
+				ON bask.OriginalSiteNumber = site.SiteNumber
+			WHERE OriginalPosNumber = '100'
+			GROUP BY 1, 2
+		) AS pthb
+			ON pth.OriginalTxnStartDate = pthb.OriginalTxnStartDate
+			AND pil.SalesOrg = pthb.SalesOrg
+		WHERE pth.OriginalTxnStartDate BETWEEN DATE_SUB(Check_Date, INTERVAL 56 WEEK) AND DATE_SUB(Check_Date, INTERVAL 52 WEEK)
+			AND PosNumber = '100'
+		GROUP BY pth.OriginalTxnStartDate, pil.SalesOrg
+	)
+
+	SELECT
+		CURR_YEAR.TxnStartDate AS TXNSTARTDATE,
+		CURR_YEAR.SalesOrg AS SALESORG,
+		CURR_YEAR.CHANNEL AS ONLINE_FLAG,
+		CURR_YEAR.SALES AS SALES,
+		PAST_YEAR.SALES AS HIST_SALES,
+		CURR_YEAR.BASKET_COUNT AS BASKET_COUNT,
+		PAST_YEAR.BASKET_COUNT AS HIST_BASKET_COUNT
+	FROM CURR_YEAR
+	INNER JOIN PAST_YEAR
+		ON CURR_YEAR.TxnStartDate = PAST_YEAR.TxnStartDate
+		AND CURR_YEAR.CHANNEL = PAST_YEAR.CHANNEL
+		AND CURR_YEAR.SalesOrg = PAST_YEAR.SalesOrg
+	WHERE CURR_YEAR.SalesOrg IN (Sales_Org)
+	ORDER BY 1, 2, 3
+	;
+
+
+
+snippet cda_check_nz_hist_adj_date sql-snippet
+	-- When need to align TY and LY's date: 
+	-- e.g Easter are diffrent in TY(Easter Monday 20240401) and LY (Easter Monday 20230410)
+	-- TY and LY diffrence are 51 weeks: select DATE_ADD('2023-04-10', INTERVAL 51 WEEK) 
+
+	-- Update Check_Date TY and LY Variable
+	-- Update LY date add week, e.g 51 to map TY date
+	-- Keep Sales_Org Variable as 2010
+	-- Keep Schema as WOOLWORTHS_NZ_CDA_ETL
+
+	DECLARE Check_Date_TY DATE DEFAULT '2024-03-31';
+	DECLARE Check_Date_LY DATE DEFAULT '2023-04-09';
+	DECLARE Sales_Org STRING DEFAULT '2010';
+
+	WITH CURR_YEAR AS (
+		SELECT
+			'Offline' AS CHANNEL,
+			TxnStartDate,
+			SalesOrg,
+			COUNT(DISTINCT basketkey) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.POS_ITEM_LINE_DETAIL\`
+		WHERE TxnStartDate BETWEEN DATE_SUB(Check_Date_TY, INTERVAL 4 WEEK) AND Check_Date_TY
+			AND Posnumber != '100'
+		GROUP BY TxnStartDate, SalesOrg
+
+		UNION ALL
+
+		SELECT
+			'Online' AS CHANNEL,
+			pth.OriginalTxnStartDate AS TxnStartDate,
+			pil.SalesOrg AS SalesOrg,
+			MAX(pthb.BASKET_COUNT) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS pil
+		LEFT OUTER JOIN (
+			SELECT
+				NewTxnStartDate,
+				NewTxnStartTime,
+				NewSiteNumber,
+				NewPosNumber,
+				NewPosTxnNumber,
+				MAX(OriginalTxnStartDate) AS OriginalTxnStartDate
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\`
+			GROUP BY 1, 2, 3, 4, 5
+		) AS pth
+			ON pil.TxnStartDate = pth.NewTxnStartDate
+			AND pil.TxnStartTime = pth.NewTxnStartTime
+			AND pil.posnumber = pth.NewPosNumber
+			AND pil.sitenumber = pth.NewSiteNumber
+			AND pil.PosTxnNumber = pth.NewPosTxnNumber
+		LEFT OUTER JOIN (
+			SELECT
+				OriginalTxnStartDate,
+				site.SalesOrg,
+				COUNT(DISTINCT OriginalBasketKey) AS BASKET_COUNT
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\` AS bask
+			LEFT OUTER JOIN \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.DIM_SITE_CURR_V\` AS site
+				ON bask.OriginalSiteNumber = site.SiteNumber
+			WHERE OriginalPosNumber = '100'
+			GROUP BY 1, 2
+		) AS pthb
+			ON pth.OriginalTxnStartDate = pthb.OriginalTxnStartDate
+			AND pil.SalesOrg = pthb.SalesOrg
+		WHERE pth.OriginalTxnStartDate BETWEEN DATE_SUB(Check_Date_TY, INTERVAL 4 WEEK) AND Check_Date_TY
+			AND PosNumber = '100'
+		GROUP BY pth.OriginalTxnStartDate, pil.SalesOrg
+	),
+
+	PAST_YEAR AS (
+		SELECT
+			'Offline' AS CHANNEL,
+			DATE_ADD(TxnStartDate, INTERVAL 51 WEEK) AS TxnStartDate,
+			SalesOrg,
+			COUNT(DISTINCT basketkey) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.POS_ITEM_LINE_DETAIL\`
+		WHERE TxnStartDate BETWEEN DATE_SUB(Check_Date_LY, INTERVAL 4 WEEK) AND Check_Date_LY
+			AND Posnumber != '100'
+		GROUP BY TxnStartDate, SalesOrg
+
+		UNION ALL
+
+		SELECT
+			'Online' AS CHANNEL,
+			DATE_ADD(pth.OriginalTxnStartDate, INTERVAL 51 WEEK) AS TxnStartDate,
+			pil.SalesOrg AS SalesOrg,
+			MAX(pthb.BASKET_COUNT) AS BASKET_COUNT,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS pil
+		LEFT OUTER JOIN (
+			SELECT
+				NewTxnStartDate,
+				NewTxnStartTime,
+				NewSiteNumber,
+				NewPosNumber,
+				NewPosTxnNumber,
+				MAX(OriginalTxnStartDate) AS OriginalTxnStartDate
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\`
+			GROUP BY 1, 2, 3, 4, 5
+		) AS pth
+			ON pil.TxnStartDate = pth.NewTxnStartDate
+			AND pil.TxnStartTime = pth.NewTxnStartTime
+			AND pil.posnumber = pth.NewPosNumber
+			AND pil.sitenumber = pth.NewSiteNumber
+			AND pil.PosTxnNumber = pth.NewPosTxnNumber
+		LEFT OUTER JOIN (
+			SELECT
+				OriginalTxnStartDate,
+				site.SalesOrg,
+				COUNT(DISTINCT OriginalBasketKey) AS BASKET_COUNT
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\` AS bask
+			LEFT OUTER JOIN \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.DIM_SITE_CURR_V\` AS site
+				ON bask.OriginalSiteNumber = site.SiteNumber
+			WHERE OriginalPosNumber = '100'
+			GROUP BY 1, 2
+		) AS pthb
+			ON pth.OriginalTxnStartDate = pthb.OriginalTxnStartDate
+			AND pil.SalesOrg = pthb.SalesOrg
+		WHERE pth.OriginalTxnStartDate BETWEEN DATE_SUB(Check_Date_LY, INTERVAL 4 WEEK) AND Check_Date_LY
+			AND PosNumber = '100'
+		GROUP BY pth.OriginalTxnStartDate, pil.SalesOrg
+	)
+
+	SELECT
+		CURR_YEAR.TxnStartDate AS TXNSTARTDATE,
+		CURR_YEAR.SalesOrg AS SALESORG,
+		CURR_YEAR.CHANNEL AS ONLINE_FLAG,
+		CURR_YEAR.SALES AS SALES,
+		PAST_YEAR.SALES AS HIST_SALES,
+		CURR_YEAR.BASKET_COUNT AS BASKET_COUNT,
+		PAST_YEAR.BASKET_COUNT AS HIST_BASKET_COUNT
+	FROM CURR_YEAR
+	INNER JOIN PAST_YEAR
+		ON CURR_YEAR.TxnStartDate = PAST_YEAR.TxnStartDate
+		AND CURR_YEAR.CHANNEL = PAST_YEAR.CHANNEL
+		AND CURR_YEAR.SalesOrg = PAST_YEAR.SalesOrg
+	WHERE CURR_YEAR.SalesOrg IN (Sales_Org)
+	ORDER BY 1, 2, 3
+	;
+
+
+
+snippet cda_check_nz_trend_cda sql-snippet
+	-- Update Check_Date Variable
+	-- Keep Sales_Org Variable as 2010
+	-- Keep Schema as WOOLWORTHS_NZ_CDA_ETL
+
+	DECLARE Check_Date DATE DEFAULT '2024-05-05';
+	DECLARE Sales_Org STRING DEFAULT '2010';
+
+	WITH Last_4week_CDA AS (
+		SELECT
+			'CDA' AS SOURCE,
+			PSS.TxnStartDate AS TXNSTARTDATE,
+			PSS.SALESORG AS SALESORG,
+			'Offline' AS ONLINE_FLAG,
+			COUNT(DISTINCT BASKETKEY) AS BASKETS,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS PSS
+		WHERE PSS.TxnStartDate BETWEEN DATE_SUB(DATE(Check_Date), INTERVAL 4 WEEK) AND DATE(Check_Date)
+			AND PosNumber NOT IN ('100')
+			AND SALESORG IN (Sales_Org)
+		GROUP BY 1, 2, 3, 4
+
+		UNION ALL
+
+		SELECT
+			'CDA' AS SOURCE,
+			pth.OriginalTxnStartDate AS TXNSTARTDATE,
+			PSS.SalesOrg AS SALESORG,
+			'Online' AS ONLINE_FLAG,
+			MAX(pthb.FulfillBaskets) AS BASKETS,
+			SUM(RetailAmountIncldGst) AS SALES
+		FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS PSS
+		LEFT OUTER JOIN (
+			SELECT
+				NewTxnStartDate,
+				NewTxnStartTime,
+				NewSiteNumber,
+				NewPosNumber,
+				NewPosTxnNumber,
+				MAX(OriginalTxnStartDate) AS OriginalTxnStartDate
+			FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\`
+			WHERE NewPosNumber IN ('100')
+			GROUP BY 1, 2, 3, 4, 5
+		) AS pth
+			ON PSS.TxnStartDate = pth.NewTxnStartDate
+			AND PSS.TxnStartTime = pth.NewTxnStartTime
+			AND PSS.posnumber = pth.NewPosNumber
+			AND PSS.sitenumber = pth.NewSiteNumber
+			AND PSS.PosTxnNumber = pth.NewPosTxnNumber
+		LEFT OUTER JOIN (
+			SELECT
+				SalesOrg,
+				FulfillmentDate,
+				SUM(FulfillSitesCount) AS FulfillBaskets
+			FROM (
+				SELECT
+					SalesOrg,
+					NewTxnStartDate,
+					NewTxnStartTime,
+					NewSiteNumber,
+					NewPosNumber,
+					NewPosTxnNumber,
+					MAX(OriginalTxnStartDate) AS FulfillmentDate,
+					COUNT(DISTINCT OriginalSiteNumber) AS FulfillSitesCount
+				FROM \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA_ETL.STAGING_POS_TXN_HEADER_ONLINE_MAPPING\` AS bask
+				LEFT OUTER JOIN \`gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_NZ_CDA.DIM_SITE_CURR_V\` AS site
+					ON bask.OriginalSiteNumber = site.SiteNumber
+				WHERE NewPosNumber IN ('100')
+				GROUP BY 1, 2, 3, 4, 5, 6
+			)
+			GROUP BY 1, 2
+		) AS pthb
+			ON pth.OriginalTxnStartDate = pthb.FulfillmentDate
+			AND PSS.SalesOrg = pthb.SalesOrg
+		WHERE pth.OriginalTxnStartDate BETWEEN DATE_SUB(DATE(Check_Date), INTERVAL 4 WEEK) AND Check_Date
+			AND PSS.PosNumber IN ('100')
+			AND PSS.SalesOrg IN (Sales_Org)
+		GROUP BY 1, 2, 3, 4
+	)
+
+	SELECT *
+	FROM Last_4week_CDA
+	ORDER BY 1, 2, 3, 4
+	;
+
+
+snippet cda_check_nz_trend_adp sql-snippet
+	-- Update date {YYYY-MM-DD}
+	-- Keep Sales_Org: 2010
+
+	SELECT
+		'ADP' AS SOURCE,
+		START_TXN_DATE AS TXN_START_DATE,
+		DIVISION_NBR AS SALES_ORG,
+		CASE WHEN CHECKOUT_NBR = '100' THEN 'Online' ELSE 'Offline' END AS ONLINE_FLAG,
+		COUNT(DISTINCT BASKET_KEY) AS BASKETKEY,
+		SUM(TOT_SALES_INCLD_GST) AS SALES
+		--SUM(TOT_WOW_DOLLAR_INCLD_GST) AS WOWDOLLAR,
+		--SUM(TOT_GROSS_INCLD_GST) AS GROSSSALES    
+
+	FROM WOWEDW_PRD.PROD_PELQUANTIUM.FACT_BASKET_SALES_SUMM_CNZ_V
+	WHERE START_TXN_DATE BETWEEN DATEADD(DAY, -28, '{YYYY-MM-DD}') AND '{YYYY-MM-DD}'
+		AND SALES_ORG IN ('2010')
+	GROUP BY 1, 2, 3, 4
+	ORDER BY 1, 2, 3, 4
+	;
+
+
+snippet cda_check_bigw_hist sql-snippet
+	-- Update Check_Date Variable
+
+	DECLARE Check_Date DATE DEFAULT '2024-03-13';
+
+	WITH PAST_YEAR AS (
+		SELECT
+			PSS.TxnStartDate,
+			SalesOrg,
+			CASE WHEN PosNumber = '100' THEN 'Online' ELSE 'Offline' END AS CHANNEL,
+			SUM(RetailAmountIncldGst) AS SALES,
+			COUNT(DISTINCT BASKETKEY) AS BASKET_COUNT
+		FROM \`gcp-wow-corp-qretail-qdh-prod.BIGW_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS PSS
+		WHERE PSS.TxnStartDate BETWEEN DATE_SUB(DATE(Check_Date), INTERVAL 56 WEEK) AND DATE_SUB(DATE(Check_Date), INTERVAL 52 WEEK)
+		GROUP BY 1, 2, 3
+	)
+	SELECT
+		CURR_YEAR.TxnStartDate AS TXNSTARTDATE,
+		CURR_YEAR.SalesOrg AS SALESORG,
+		CURR_YEAR.CHANNEL AS ONLINE_FLAG,
+		CURR_YEAR.SALES AS SALES,
+		PAST_YEAR.SALES AS HIST_SALES,
+		CURR_YEAR.BASKET_COUNT AS BASKET_COUNT,
+		PAST_YEAR.BASKET_COUNT AS HIST_BASKET_COUNT
+	FROM (
+		SELECT
+			PSS.TxnStartDate,
+			DATE_SUB(PSS.TxnStartDate, INTERVAL 52 WEEK) AS TxnStartDate_LY,
+			SalesOrg,
+			CASE WHEN PosNumber = '100' THEN 'Online' ELSE 'Offline' END AS CHANNEL,
+			SUM(RetailAmountIncldGst) AS SALES,
+			COUNT(DISTINCT BASKETKEY) AS BASKET_COUNT
+		FROM \`gcp-wow-corp-qretail-qdh-prod.BIGW_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS PSS
+		WHERE PSS.TxnStartDate BETWEEN DATE_SUB(DATE(Check_Date), INTERVAL 4 WEEK) AND DATE(Check_Date)
+		GROUP BY 1, 2, 3, 4
+	) AS CURR_YEAR
+	LEFT OUTER JOIN PAST_YEAR
+		ON CURR_YEAR.TxnStartDate_LY = PAST_YEAR.TxnStartDate
+		AND CURR_YEAR.CHANNEL = PAST_YEAR.CHANNEL
+		AND CURR_YEAR.SalesOrg = PAST_YEAR.SalesOrg
+	ORDER BY 1, 2, 3
+	;
+
+
+snippet cda_check_bigw_hist_adj_date sql-snippet
+	-- When need to align TY and LY's date: 
+	-- e.g Easter are diffrent in TY(Easter Monday 20240401) and LY (Easter Monday 20230410)
+	-- TY and LY diffrence are 51 weeks: select DATE_ADD('2023-04-10', INTERVAL 51 WEEK) 
+
+	-- Update Check_Date TY and LY Variable
+	-- Update LY date add week, e.g 51 to map TY date
+
+	DECLARE Check_Date_TY DATE DEFAULT '2024-04-03';
+	DECLARE Check_Date_LY DATE DEFAULT '2023-04-12';
+
+	WITH PAST_YEAR AS (
+		SELECT
+			PSS.TxnStartDate,
+			SalesOrg,
+			CASE WHEN PosNumber = '100' THEN 'Online' ELSE 'Offline' END AS CHANNEL,
+			SUM(RetailAmountIncldGst) AS SALES,
+			COUNT(DISTINCT BASKETKEY) AS BASKET_COUNT
+		FROM \`gcp-wow-corp-qretail-qdh-prod.BIGW_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS PSS
+		WHERE PSS.TxnStartDate BETWEEN DATE_SUB(Check_Date_LY, INTERVAL 4 WEEK) AND Check_Date_LY
+		GROUP BY 1, 2, 3
+	)
+	SELECT
+		CURR_YEAR.TxnStartDate AS TXNSTARTDATE,
+		CURR_YEAR.SalesOrg AS SALESORG,
+		CURR_YEAR.CHANNEL AS ONLINE_FLAG,
+		CURR_YEAR.SALES AS SALES,
+		PAST_YEAR.SALES AS HIST_SALES,
+		CURR_YEAR.BASKET_COUNT AS BASKET_COUNT,
+		PAST_YEAR.BASKET_COUNT AS HIST_BASKET_COUNT
+	FROM (
+		SELECT
+			PSS.TxnStartDate,
+			DATE_SUB(PSS.TxnStartDate, INTERVAL 51 WEEK) AS TxnStartDate_LY,
+			SalesOrg,
+			CASE WHEN PosNumber = '100' THEN 'Online' ELSE 'Offline' END AS CHANNEL,
+			SUM(RetailAmountIncldGst) AS SALES,
+			COUNT(DISTINCT BASKETKEY) AS BASKET_COUNT
+		FROM \`gcp-wow-corp-qretail-qdh-prod.BIGW_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS PSS
+		WHERE PSS.TxnStartDate BETWEEN DATE_SUB(Check_Date_TY, INTERVAL 4 WEEK) AND Check_Date_TY
+		GROUP BY 1, 2, 3, 4
+	) AS CURR_YEAR
+	LEFT OUTER JOIN PAST_YEAR
+		ON CURR_YEAR.TxnStartDate_LY = PAST_YEAR.TxnStartDate
+		AND CURR_YEAR.CHANNEL = PAST_YEAR.CHANNEL
+		AND CURR_YEAR.SalesOrg = PAST_YEAR.SalesOrg
+	ORDER BY 1, 2, 3
+	;
+
+
+snippet cda_check_bigw_trend_cda sql-snippet
+	-- Update Check_Date Variable
+	-- Keep Sales_Org Variable as 1060
+	-- Keep Schema as BIGW_CDA_ETL
+
+	DECLARE Check_Date DATE DEFAULT '2024-03-13';
+	DECLARE Sales_Org STRING DEFAULT '1060';
+
+	SELECT
+		'CDA' AS SOURCE,
+		PSS.TxnStartDate AS TXNSTARTDATE,
+		PSS.SALESORG AS SALESORG,
+		CASE WHEN PosNumber = '100' THEN 'Online' ELSE 'Offline' END AS ONLINE_FLAG,
+		COUNT(DISTINCT BASKETKEY) AS BASKETS,
+		SUM(RetailAmountIncldGst) AS SALES
+	FROM \`gcp-wow-corp-qretail-qdh-prod.BIGW_CDA_ETL.POS_ITEM_LINE_DETAIL\` AS PSS
+	WHERE PSS.TxnStartDate BETWEEN DATE_SUB(DATE(Check_Date), INTERVAL 4 WEEK) AND DATE(Check_Date)
+		AND SALESORG IN (Sales_Org)
+	GROUP BY 1, 2, 3, 4
+	ORDER BY 1, 2, 3, 4
+	;
+
+
+snippet cda_check_bigw_trend_adp sql-snippet
+	-- Update date {YYYY-MM-DD}
+	-- Keep Sales_Org: 1060
+
+	SELECT
+		'ADP' AS SOURCE,
+		TXN_START_DATE,
+		SALES_ORG,
+		CASE WHEN POS_NUMBER = '100' THEN 'Online' ELSE 'Offline' END AS ONLINE_FLAG,
+		COUNT(DISTINCT BASKET_KEY) AS BASKETKEY,
+		SUM(TOTAL_AMOUNT_INCLD_GST) AS SALES
+
+	FROM WOWEDW_PRD.ADP.QTM_POS_ITEM_LINE_CURR
+	WHERE TXN_START_DATE BETWEEN DATEADD(DAY, -28, '{YYYY-MM-DD}') AND '{YYYY-MM-DD}'
+		AND SALES_ORG IN ('1060')
+	GROUP BY 1, 2, 3, 4
+	ORDER BY 1, 2, 3, 4
+	;
+
+
+snippet cda_check_recon sql-snippet
+	-- Update {Schema} to WOOLWORTHS_AUS_CDA / WOOLWORTHS_NZ_CDA / BIGW_CDA
+
+	-- Get the article level latest txn date and total historical sales
+	WITH PIL AS (
+	  SELECT
+		SalesOrg,
+		ProductNumber,
+		MAX(TxnStartDate) AS LastTxn,
+		SUM(RETAILAMOUNTINCLDGST) AS HistSales
+	  FROM
+		\`gcp-wow-corp-qretail-qdh-prod.{Schema}_ETL.POS_ITEM_LINE_DETAIL\`
+	  GROUP BY 1,2 )
+
+	-- Check removed product in PIL, see if any sales
+	SELECT
+	  CDA.SalesOrg,
+	  CDA.ProductNumber,
+	  CDA.ArticleDescription,
+	  CDA.OnlineBrandDescription,
+	  CDA.DepartmentDescription,
+	  CDA.CategoryDescription,
+	  CDA.SubCategory,
+	  PIL.LastTxn,
+	  PIL.HistSales
+	FROM \`gcp-wow-corp-qretail-qdh-prod.{Schema}.DIM_PRODUCT_CURR_V\` AS CDA
+	LEFT JOIN  \`gcp-wow-corp-qretail-qdh-prod.{Schema}_ETL.DIM_PRODUCT_HIST_V` CDA_ETL
+	ON CDA.SalesOrg = CDA_ETL.SalesOrg
+	   AND CDA.ProductNumber = CDA_ETL.ProductNumber
+	   AND CAST(CDA_ETL.end_dttm AS DATE) = '2099-12-31'
+	LEFT JOIN PIL
+	ON CDA.SalesOrg = PIL.SalesOrg
+	  AND CDA.ProductNumber = PIL.ProductNumber
+	WHERE CDA_ETL.ProductNumber IS NULL
+	;
+
+
+
+snippet cda_check_au_basketkey_dups sql-snippet
+	-- Update schema when check different division
+	-- Check AUS PTH Duplication
+	SELECT
+	  basketkey,
+	  COUNT(*) AS basket_count
+	FROM gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_TXN_HEADER
+	WHERE txnstartdate >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 year)
+	GROUP BY basketkey
+	HAVING basket_count >= 2
+	;
+
+	-- Check AUS PIL Duplication
+	SELECT
+	  basketkey,
+	  productnumber,
+	  COUNT(*) AS basket_count
+	FROM gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_ITEM_LINE_DETAIL
+	WHERE txnstartdate >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 year)
+	GROUP BY basketkey,productnumber
+	HAVING basket_count >= 2
+	;
+
+	-- Check AUS PRL Duplication
+	SELECT
+	  basketkey,
+	  productnumber,
+	  offerid,
+	  COUNT(*) AS basket_count
+	FROM gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_REWARD_LINE_DETAIL
+	WHERE txnstartdate >= DATE_SUB(CURRENT_DATE(), INTERVAL 1 year)
+	GROUP BY basketkey, productnumber, offerid
+	HAVING basket_count >= 2
+
+	-- Check AUS POS_TXN_HEADER_CUST Duplication: from 2024
+	SELECT
+	  basketkey,
+	  MIN(txnstartdate),
+	  MAX(txnstartdate),
+	  COUNT(*)
+	FROM gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_TXN_HEADER_CUST
+	WHERE txnstartdate >= DATE('2024-01-01')
+	GROUP BY basketkey
+	HAVING COUNT(*) > 1
+	;
+
+	-- Check AUS POS_ITEM_LINE_DETAIL_CUST Duplication: from 2024
+	SELECT
+	  basketkey,
+	  productnumber,
+	  MIN(txnstartdate),
+	  MAX(txnstartdate),
+	  COUNT(*)
+	FROM gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_ITEM_LINE_DETAIL_CUST
+	WHERE txnstartdate >= DATE('2024-01-01')
+	GROUP BY basketkey,productnumber
+	HAVING COUNT(*) > 1
+	;

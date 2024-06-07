@@ -17,7 +17,10 @@ if not lspkind_status then
 end
 
 -- load vs-code like snippets from plugins (e.g. friendly-snippets)
-require("luasnip/loaders/from_vscode").lazy_load()
+require("luasnip.loaders.from_vscode").lazy_load()
+-- require("luasnip.loaders.from_vscode").load({ paths = { "~/.config/snippets/python" } })
+-- require("luasnip.loaders.from_vscode").load({ paths = { "~/.config/snippets/sql" } })
+require("luasnip.loaders.from_snipmate").lazy_load({ paths = "~/.config/nvim/snippets" })
 
 vim.opt.completeopt = "menu,menuone,noselect"
 
@@ -43,6 +46,17 @@ cmp.setup({
 		{ name = "luasnip" }, -- snippets
 		{ name = "buffer" }, -- text within current buffer
 		{ name = "path" }, -- file system paths
+	}),
+
+	-- Setup up vim-dadbod
+	cmp.setup.filetype({ "sql" }, {
+		sources = {
+			{ name = "vim-dadbod-completion" }, -- dadbod
+			{ name = "cody" }, -- cody
+			{ name = "luasnip" }, -- snippets
+			{ name = "buffer" }, -- buffer
+			{ name = "path" }, -- file system paths
+		},
 	}),
 	-- configure lspkind for vs-code like icons
 	formatting = {

@@ -68,7 +68,10 @@ return packer.startup(function(use)
 	use("hrsh7th/cmp-path") -- source for file system paths
 
 	-- snippets
-	use("L3MON4D3/LuaSnip") -- snippet engine
+	use({
+		"L3MON4D3/LuaSnip",
+		requires = { "kmarius/jsregexp" },
+	}) -- snippet engine
 	use("saadparwaiz1/cmp_luasnip") -- for autocompletion
 	use("rafamadriz/friendly-snippets") -- useful snippets
 
@@ -91,7 +94,7 @@ return packer.startup(function(use)
 	use("onsails/lspkind.nvim") -- vs-code like icons for autocompletion
 
 	-- formatting & linting
-	use("jose-elias-alvarez/null-ls.nvim") -- configure formatters & linters
+	use("nvimtools/none-ls.nvim") -- configure formatters & linters
 	use("jayp0521/mason-null-ls.nvim") -- bridges gap b/w mason & null-ls
 
 	-- treesitter configuration
@@ -126,10 +129,10 @@ return packer.startup(function(use)
 	use({
 		"smoka7/hop.nvim",
 		tag = "*", -- optional but strongly recommended
-		config = function()
-			-- you can configure Hop the way you like here; see :h hop-config
-			require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
-		end,
+		-- config = function()
+		-- 	-- you can configure Hop the way you like here; see :h hop-config
+		-- 	require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
+		-- end,
 	})
 
 	-- gen plugin with ollama
@@ -165,6 +168,15 @@ return packer.startup(function(use)
 			-- Your DBUI configuration
 			vim.g.db_ui_use_nerd_fonts = 1
 		end,
+	})
+
+	-- alpha nvim dashboard
+	use({
+		"goolord/alpha-nvim",
+		requires = { "nvim-tree/nvim-web-devicons" },
+		-- config = function()
+		-- 	require("alpha").setup(require("alpha.themes.startify").config)
+		-- end,
 	})
 
 	if packer_bootstrap then

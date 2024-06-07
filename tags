@@ -3972,6 +3972,7 @@ nargs	node_modules/argparse/argparse.js	/^            nargs: undefined,$/;"	p	va
 nargs	node_modules/argparse/argparse.js	/^            nargs: undefined,$/;"	p	variable:anonymousObject72739af62505.constructor.anonymousObject72739af62605
 nargs	node_modules/argparse/argparse.js	/^        let nargs = action.nargs$/;"	v	variable:_SubParsersAction.anonymousObject72739af65105
 nargs	node_modules/sql-formatter/bin/sql-formatter-cli.cjs	/^      nargs: '?',$/;"	p	variable:anonymousObject0ab37d9e0205
+nargs	plugin/packer_compiled.lua	/^        {nargs = '*', range = true, bang = true, complete = function()$/;"	f
 nargs_errors	node_modules/argparse/argparse.js	/^            let nargs_errors = {$/;"	v	variable:_SubParsersAction.anonymousObject72739af65105
 nargs_pattern	node_modules/argparse/argparse.js	/^        let nargs_pattern = this._get_nargs_pattern(action)$/;"	v	variable:_SubParsersAction.anonymousObject72739af65105
 nargs_pattern	node_modules/argparse/argparse.js	/^        let nargs_pattern$/;"	v	variable:_SubParsersAction.anonymousObject72739af65105
@@ -5439,6 +5440,7 @@ setattr	node_modules/argparse/argparse.js	/^function setattr(object, name, value
 setdefault	node_modules/argparse/argparse.js	/^function setdefault(object, name, value) {$/;"	f
 sets	node_modules/ret/lib/index.js	/^var sets      = require('.\/sets');$/;"	v
 sets	node_modules/ret/lib/util.js	/^var sets  = require('.\/sets');$/;"	v
+setup	lua/davidz/plugins-setup.lua	/^		setup = function()$/;"	f
 short_explicit_arg	node_modules/argparse/argparse.js	/^            let short_explicit_arg = option_string.slice(2)$/;"	v	variable:_SubParsersAction.anonymousObject72739af65105
 short_option_prefix	node_modules/argparse/argparse.js	/^            let short_option_prefix = option_string.slice(0, 2)$/;"	v	variable:_SubParsersAction.anonymousObject72739af65105
 should	node_modules/commander/package.json	/^    "should": "^13.2.3",$/;"	s	object:devDependencies

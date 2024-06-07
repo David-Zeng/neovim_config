@@ -38,4 +38,6 @@ opt.splitbelow = true
 -- keywords
 opt.iskeyword:append("-")
 
-
+-- ignorecase
+opt.ignorecase = true
+opt.smartcase = true

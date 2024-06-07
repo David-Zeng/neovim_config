@@ -30,8 +30,8 @@ mason_lspconfig.setup({
 		"yamlls",
 		-- "solang",
 		-- "tsserver",
-		-- "html",
-		-- "cssls",
+		"html",
+		"cssls",
 		-- "tailwindcss",
 		"lua_ls",
 		"bashls",
@@ -48,7 +48,7 @@ mason_null_ls.setup({
 		"stylua", -- lua formatter
 		-- "eslint_d", -- ts/js linter
 		"sqlfluffy", -- sql linter
-		"sql_formatter", -- sql formatter
+		-- "sql_formatter", -- sql formatter
 		"black", -- python formatter
 	},
 	-- auto-install configured formatters & linters (with null-ls)

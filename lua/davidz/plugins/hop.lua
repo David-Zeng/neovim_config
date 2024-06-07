@@ -1,8 +1,8 @@
 -- import leap plugin safely
-local setup, leap = pcall(require, "leap")
+local setup, hop = pcall(require, "hop")
 if not setup then
 	return
 end
 
 -- configure/enable gitsigns
-leap.setup()
+require("hop").setup({ keys = "etovxqpdygfblzhckisuran" })
