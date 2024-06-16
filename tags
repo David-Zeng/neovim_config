@@ -55,6 +55,29 @@
 !_TAG_KIND_DESCRIPTION!Python	i,module	/modules/
 !_TAG_KIND_DESCRIPTION!Python	m,member	/class members/
 !_TAG_KIND_DESCRIPTION!Python	v,variable	/variables/
+!_TAG_KIND_DESCRIPTION!SQL	C,ccflag	/PLSQL_CCFLAGS/
+!_TAG_KIND_DESCRIPTION!SQL	D,domain	/domains/
+!_TAG_KIND_DESCRIPTION!SQL	E,field	/record fields/
+!_TAG_KIND_DESCRIPTION!SQL	L,label	/block label/
+!_TAG_KIND_DESCRIPTION!SQL	P,package	/packages/
+!_TAG_KIND_DESCRIPTION!SQL	R,service	/services/
+!_TAG_KIND_DESCRIPTION!SQL	S,schema	/schemas/
+!_TAG_KIND_DESCRIPTION!SQL	T,trigger	/triggers/
+!_TAG_KIND_DESCRIPTION!SQL	U,publication	/publications/
+!_TAG_KIND_DESCRIPTION!SQL	V,view	/views/
+!_TAG_KIND_DESCRIPTION!SQL	b,database	/database/
+!_TAG_KIND_DESCRIPTION!SQL	c,cursor	/cursors/
+!_TAG_KIND_DESCRIPTION!SQL	e,event	/events/
+!_TAG_KIND_DESCRIPTION!SQL	f,function	/functions/
+!_TAG_KIND_DESCRIPTION!SQL	i,index	/indexes/
+!_TAG_KIND_DESCRIPTION!SQL	n,synonym	/synonyms/
+!_TAG_KIND_DESCRIPTION!SQL	p,procedure	/procedures/
+!_TAG_KIND_DESCRIPTION!SQL	s,subtype	/subtypes/
+!_TAG_KIND_DESCRIPTION!SQL	t,table	/tables/
+!_TAG_KIND_DESCRIPTION!SQL	v,variable	/variables/
+!_TAG_KIND_DESCRIPTION!SQL	x,mltable	/MobiLink Table Scripts/
+!_TAG_KIND_DESCRIPTION!SQL	y,mlconn	/MobiLink Conn Scripts/
+!_TAG_KIND_DESCRIPTION!SQL	z,mlprop	/MobiLink Properties/
 !_TAG_KIND_DESCRIPTION!Sh	a,alias	/aliases/
 !_TAG_KIND_DESCRIPTION!Sh	f,function	/functions/
 !_TAG_KIND_DESCRIPTION!Sh	h,heredoc	/label for here document/
@@ -83,6 +106,7 @@
 !_TAG_PARSER_VERSION!Lua	0.0	/current.age/
 !_TAG_PARSER_VERSION!Markdown	1.1	/current.age/
 !_TAG_PARSER_VERSION!Python	0.0	/current.age/
+!_TAG_PARSER_VERSION!SQL	0.0	/current.age/
 !_TAG_PARSER_VERSION!Sh	0.0	/current.age/
 !_TAG_PARSER_VERSION!TypeScript	0.0	/current.age/
 !_TAG_PARSER_VERSION!Yaml	0.0	/current.age/
@@ -2708,6 +2732,7 @@ extraParens	node_modules/sql-formatter/dist/sql-formatter.min.js	/^!function(E,T
 extraParens	node_modules/sql-formatter/dist/sql-formatter.min.js	/^!function(E,T){"object"==typeof exports&&"object"==typeof module?module.exports=T():"function"==/;"	p	property:yE.tokenizerOptions
 extraParens	node_modules/sql-formatter/dist/sql-formatter.min.js	/^!function(E,T){"object"==typeof exports&&"object"==typeof module?module.exports=T():"function"==/;"	p	property:z.tokenizerOptions
 extras	node_modules/argparse/argparse.js	/^        let extras$/;"	v	variable:_SubParsersAction.anonymousObject72739af65105
+f	lua/davidz/plugins/luasnip.lua	/^local f = ls.function_node$/;"	f
 f	node_modules/ret/lib/util.js	/^var SLSH = { '0': 0, 't': 9, 'n': 10, 'v': 11, 'f': 12, 'r': 13 };$/;"	p	variable:SLSH
 f	node_modules/sql-formatter/dist/sql-formatter.min.js	/^!function(E,T){"object"==typeof exports&&"object"==typeof module?module.exports=T():"function"==/;"	C
 fE	node_modules/sql-formatter/dist/sql-formatter.min.js	/^!function(E,T){"object"==typeof exports&&"object"==typeof module?module.exports=T():"function"==/;"	C

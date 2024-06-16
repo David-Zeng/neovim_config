@@ -24,6 +24,7 @@ require("davidz.plugins.markdown-preview")
 require("davidz.plugins.dadbod")
 require("davidz.plugins.alpha")
 require("davidz.plugins.luasnip")
+require("davidz.plugins.oil")
 
 -- python provider
 vim.g.python3_host_prog = "/Users/davidzeng/miniforge3/bin/python3"

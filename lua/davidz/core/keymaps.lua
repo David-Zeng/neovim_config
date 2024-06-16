@@ -133,4 +133,8 @@ keymap.set("n", "<leader>tt", ':lua vim.cmd("!ctags -R .")<CR>', { noremap = tru
 -- nvim tree toggle
 keymap.set("n", "<leader>ss", ":NvimTreeToggle<CR>", { noremap = true })
 
+-- text wrap
 keymap.set("n", "<leader>tw", ":set wrap!<CR>", { noremap = true })
+
+-- oil
+keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
