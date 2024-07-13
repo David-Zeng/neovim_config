@@ -10,26 +10,23 @@ def create_and_operate_arrays():
 
     # Creating two example arrays of integers using numpy's arange() function
     array_a = np.arange(5)
-    array_b = np_array[
-        4:9
-    ]  # Assuming 'np_array' is previously defined with values [4, 5, 6, 7, 8]
+    array_b = np.arange(4, 9)  # Corrected the typo from 'np_array' to 'np.arange'
 
     # Performing element-wise addition and multiplication
     summed_arrays = array_a + array_b
     product_arrays = array_a * array_b
 
-    # Formatted output of the results using numpy's print_r() function for readability
+    # Formatted output of the results using numpy's print() function for readability
     print("Summed Array:")
     np.set_printoptions(precision=2)  # Setting precision for displaying float numbers
-    print(np.array(nummed_arrays))
+    print(summed_arrays)
 
     print("\nProduct of Arrays:")
     np.set_printoptions(
         precision=2, suppress=True
     )  # Suppressing scientific notation and setting precision
-    print(np.array(product_arrays))
+    print(product_arrays)
 
 
-# Example usage
 if __name__ == "__main__":
     create_and_operate_arrays()

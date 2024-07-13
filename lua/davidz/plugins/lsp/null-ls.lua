@@ -20,7 +20,7 @@ null_ls.setup({
 		formatting.prettier, -- js/ts formatter
 		formatting.stylua, -- lua formatter
 		formatting.sqlfluff.with({
-			extra_args = { "--config", vim.fn.getcwd() .. "/.sqlfluff" },
+			extra_args = { "--config", "/Users/davidzeng/.sqlfluff" },
 		}), -- sql formatter
 		formatting.black, -- sql formatter
 
@@ -31,9 +31,9 @@ null_ls.setup({
 		-- 	end,
 		-- }),
 
-		diagnostics.sqlfluff.with({ -- sql linter
-			extra_args = { "--dialect", "snowflake" }, -- change to your dialect
-		}),
+		-- diagnostics.sqlfluff.with({ -- sql linter
+		-- 	extra_args = { "--dialect", "snowflake" }, -- change to your dialect
+		-- }),
 	},
 	-- configure format on save
 	on_attach = function(current_client, bufnr)

@@ -33,10 +33,10 @@ HAVING basket_count >= 2
 
 -- Check AUS POS_TXN_HEADER_CUST Duplication: from 2024
 SELECT
-  basketkey,
-  MIN(txnstartdate),
-  MAX(txnstartdate),
-  COUNT(*)
+      basketkey,
+      MIN(txnstartdate),
+      MAX(txnstartdate),
+      COUNT(*)
 FROM gcp-wow-corp-qretail-qdh-prod.WOOLWORTHS_AUS_CDA_ETL.POS_TXN_HEADER_CUST
 WHERE txnstartdate >= DATE('2024-01-01')
 GROUP BY basketkey
