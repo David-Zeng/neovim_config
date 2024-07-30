@@ -38,6 +38,7 @@ return packer.startup(function(use)
 	use("bluz71/vim-nightfly-guicolors") -- preferred colorscheme
 	use("altercation/vim-colors-solarized") -- solarized colorscheme
 	use("rebelot/kanagawa.nvim") -- kanagawa colorscheme
+	use("vague2k/vague.nvim")
 
 	use("christoomey/vim-tmux-navigator") -- tmux & split window navigation
 
