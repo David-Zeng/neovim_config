@@ -136,5 +136,39 @@ keymap.set("n", "<leader>ss", ":NvimTreeToggle<CR>", { noremap = true })
 -- text wrap
 keymap.set("n", "<leader>tw", ":set wrap!<CR>", { noremap = true })
 
+-- wrap toggle
+keymap.set("n", "<leader>tw", ":set wrap!<CR>", { noremap = true })
+
 -- oil
 keymap.set("n", "-", "<CMD>Oil<CR>", { desc = "Open parent directory" })
+
+-- gp.nvim Keymaps
+keymap.set("n", "<C-g>c", ":GpChatNew<CR>", { desc = "New GP Chat" })
+keymap.set("n", "<C-g>t", ":GpChatToggle<CR>", { desc = "Toggle GP Chat" })
+keymap.set("n", "<C-g>o", ":GpChatRespond<CR>", { desc = "GP Chat Respond" })
+keymap.set("n", "<C-g>v", ":GpChatPaste<CR>", { desc = "GP Chat Paste" })
+keymap.set("n", "<C-g>f", ":GpChatFinder<CR>", { desc = "GP Chat Finder" })
+keymap.set("n", "<C-g>d", ":GpChatDelete<CR>", { desc = "Delete GP Chat" })
+
+keymap.set("n", "<C-g>r", ":GpRewrite<CR>", { desc = "GP Rewrite" })
+keymap.set("n", "<C-g>a", ":GpAppend<CR>", { desc = "GP Append" })
+keymap.set("n", "<C-g>b", ":GpPrepend<CR>", { desc = "GP Prepend" })
+keymap.set("n", "<C-g>e", ":GpEnew<CR>", { desc = "GP Enew" })
+keymap.set("n", "<C-g>n", ":GpNew<CR>", { desc = "GP New" })
+keymap.set("n", "<C-g>s", ":GpVnew<CR>", { desc = "GP Vnew" })
+keymap.set("n", "<C-g>p", ":GpPopup<CR>", { desc = "GP Popup" })
+keymap.set("n", "<C-g>i", ":GpImplement<CR>", { desc = "GP implement from comments" })
+
+keymap.set("v", "<C-g>r", ":<C-u>'<,'>GpRewrite<CR>", { desc = "GP Rewrite Selected" })
+keymap.set("v", "<C-g>a", ":<C-u>'<,'>GpAppend<CR>", { desc = "GP Append Selected" })
+keymap.set("v", "<C-g>b", ":<C-u>'<,'>GpPrepend<CR>", { desc = "GP Prepend Selected" })
+keymap.set("v", "<C-g>p", ":<C-u>'<,'>GpPopup<CR>", { desc = "GP Popup Selected" })
+keymap.set("v", "<C-g>e", ":<C-u>'<,'>GpEnew<CR>", { desc = "GP Enew Selected" })
+keymap.set("v", "<C-g>n", ":<C-u>'<,'>GpNew<CR>", { desc = "GP New Selected" })
+keymap.set("v", "<C-g>s", ":<C-u>'<,'>GpVnew<CR>", { desc = "GP Vnew Selected" })
+keymap.set("v", "<C-g>i", ":<C-u>'<,'>GpImplement<CR>", { desc = "GP implement from comments Selected" })
+
+keymap.set("i", "<C-g>r", "<Esc>:GpRewrite<CR>", { desc = "GP Rewrite" })
+keymap.set("i", "<C-g>a", "<Esc>:GpAppend<CR>", { desc = "GP Append" })
+keymap.set("i", "<C-g>b", "<Esc>:GpPrepend<CR>", { desc = "GP Prepend" })
+keymap.set("i", "<C-g>p", "<Esc>:GpPopup<CR>", { desc = "GP Popup" })

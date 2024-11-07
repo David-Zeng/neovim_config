@@ -17,7 +17,8 @@ require("davidz.plugins.gitsigns")
 require("davidz.plugins.jupyter-vim")
 require("davidz.plugins.cody")
 require("davidz.plugins.hop")
-require("davidz.plugins.gen")
+-- require("davidz.plugins.gen")
+require("davidz.plugins.gp")
 -- require("davidz.plugins.auto_session")
 require("davidz.plugins.possession")
 require("davidz.plugins.markdown-preview")
@@ -25,6 +26,8 @@ require("davidz.plugins.dadbod")
 require("davidz.plugins.alpha")
 require("davidz.plugins.luasnip")
 require("davidz.plugins.oil")
+-- require("davidz.plugins.hardtime")
+-- require("davidz.plugins.avante")
 
 -- python provider
 vim.g.python3_host_prog = "/Users/davidzeng/miniforge3/bin/python3"

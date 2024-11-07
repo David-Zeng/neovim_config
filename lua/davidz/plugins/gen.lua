@@ -7,8 +7,8 @@ end
 -- configure/enable gitsigns
 gen.setup({
 	-- model = "phi3:instruct", -- The default model to use.
-	-- model = "starling-lm:7b-beta-q4_K_M", -- The default model to use.
-	model = "qwen2:1.5b-instruct-q6_K",
+	model = "starling-lm:7b-beta-q4_K_M", -- The default model to use.
+	-- model = "qwen2:1.5b-instruct-q6_K",
 	host = "localhost", -- The host running the Ollama service.
 	port = "11434", -- The port on which the Ollama service is listening.
 	quit_map = "q", -- set keymap for close the response window

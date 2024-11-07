@@ -29,7 +29,6 @@ mason_lspconfig.setup({
 		"vimls",
 		"yamlls",
 		-- "solang",
-		-- "tsserver",
 		"html",
 		"cssls",
 		-- "tailwindcss",

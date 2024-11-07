@@ -143,6 +143,52 @@ return packer.startup(function(use)
 	-- gen plugin with ollama
 	use({ "David-Kunz/gen.nvim" })
 
+	-- gp.nvim
+	use({ "robitx/gp.nvim" })
+
+	-- avante
+	use({
+		"stevearc/dressing.nvim",
+		"MunifTanjim/nui.nvim",
+		-- "zbirenbaum/copilot.lua", -- Optional dependency for 'copilot' provider
+		{
+			"HakonHarnes/img-clip.nvim",
+			config = function()
+				require("img-clip").setup({
+					-- Recommended settings
+					default = {
+						embed_image_as_base64 = false,
+						prompt_for_file_name = false,
+						drag_and_drop = {
+							insert_mode = true,
+						},
+						-- Required for Windows users
+						use_absolute_path = true,
+					},
+				})
+			end,
+		},
+		{
+			"MeanderingProgrammer/render-markdown.nvim",
+			ft = { "markdown", "Avante" }, -- Loads plugin for these filetypes
+			config = function()
+				require("render-markdown").setup({
+					file_types = { "markdown", "Avante" },
+				})
+			end,
+		},
+	})
+	use({
+		"yetone/avante.nvim",
+		run = "make", -- Runs 'make' after installation
+		config = function()
+			require("avante_lib").load()
+			require("avante").setup({
+				-- your configuration here
+			})
+		end,
+	})
+
 	-- markdown preview
 	use({
 		"iamcco/markdown-preview.nvim",
@@ -199,6 +245,30 @@ return packer.startup(function(use)
 			end, { desc = "Buffer Local Keymaps (which-key)" })
 		end,
 	})
+
+	-- markview
+	use({
+		"OXY2DEV/markview.nvim",
+		-- Not lazy-loaded (equivalent to lazy = false in lazy.lua)
+		requires = {
+			"nvim-treesitter/nvim-treesitter",
+			"nvim-tree/nvim-web-devicons",
+		},
+		-- If you want to lazy-load for markdown files, uncomment the next line:
+		-- ft = 'markdown'
+	})
+
+	--hardtime
+	use({
+		"m4xshen/hardtime.nvim",
+		requires = {
+			"MunifTanjim/nui.nvim",
+			"nvim-lua/plenary.nvim",
+		},
+	})
+
+	-- nvim-dap
+	use("mfussenegger/nvim-dap-python")
 
 	if packer_bootstrap then
 		require("packer").sync()
