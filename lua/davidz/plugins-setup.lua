@@ -122,7 +122,7 @@ return packer.startup(function(use)
 	use({ "jupyter-vim/jupyter-vim" }) -- jupyter-vim
 
 	-- cody
-	use({ "sourcegraph/sg.nvim", run = "nvim -l build/init.lua" })
+	-- use({ "sourcegraph/sg.nvim", run = "nvim -l build/init.lua" })
 
 	-- tagbar
 	use({ "preservim/tagbar" })
@@ -150,7 +150,8 @@ return packer.startup(function(use)
 	use({
 		"stevearc/dressing.nvim",
 		"MunifTanjim/nui.nvim",
-		-- "zbirenbaum/copilot.lua", -- Optional dependency for 'copilot' provider
+		"echasnovski/mini.pick", -- for file_selector provider mini.pick
+		"zbirenbaum/copilot.lua", -- Optional dependency for 'copilot' provider
 		{
 			"HakonHarnes/img-clip.nvim",
 			config = function()
@@ -180,11 +181,59 @@ return packer.startup(function(use)
 	})
 	use({
 		"yetone/avante.nvim",
-		run = "make", -- Runs 'make' after installation
+		event = "VimEnter",
+		run = "make BUILD_FROM_SOURCE=true", -- Runs 'make' after installation
 		config = function()
 			require("avante_lib").load()
 			require("avante").setup({
 				-- your configuration here
+				claude = {
+					disable_tools = true, -- disable tools!
+				},
+
+				-- The system_prompt type supports both a string and a function that returns a string. Using a function here allows dynamically updating the prompt with mcphub
+				system_prompt = function()
+					local hub = require("mcphub").get_hub_instance()
+					return hub:get_active_servers_prompt()
+				end,
+				-- The custom_tools type supports both a list and a function that returns a list. Using a function here prevents requiring mcphub before it's loaded
+				custom_tools = function()
+					return {
+						require("mcphub.extensions.avante").mcp_tool(),
+					}
+				end,
+			})
+		end,
+	})
+
+	-- mcphub
+	use({
+		"ravitemer/mcphub.nvim",
+		requires = {
+			"nvim-lua/plenary.nvim", -- Required for Job and HTTP requests
+		},
+		-- cmd = 'MCPHub', -- lazily start the hub when `MCPHub` is called
+		run = "npm install -g mcp-hub@latest", -- Installs required mcp-hub npm module
+		config = function()
+			require("mcphub").setup({
+				-- Required options
+				port = 3000, -- Port for MCP Hub server
+				config = vim.fn.expand("~/mcpservers.json"), -- Absolute path to config file
+
+				-- Optional options
+				on_ready = function(hub)
+					-- Called when hub is ready
+				end,
+				on_error = function(err)
+					-- Called on errors
+				end,
+				shutdown_delay = 0, -- Wait 0ms before shutting down server after last client exits
+				log = {
+					level = vim.log.levels.WARN,
+					to_file = false,
+					file_path = nil,
+					prefix = "MCPHub",
+				},
 			})
 		end,
 	})
@@ -257,6 +306,8 @@ return packer.startup(function(use)
 		-- If you want to lazy-load for markdown files, uncomment the next line:
 		-- ft = 'markdown'
 	})
+
+	--test
 
 	--hardtime
 	use({
